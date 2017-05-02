@@ -8,9 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
+
 import { BeautyPage } from '../pages/beauty-page/beauty-page';
 import {  YogaPage } from '../pages/yoga-page/yoga-page';
 import { FitnessPage } from '../pages/fitness-page/fitness-page';
+
+import { Postpage} from '../pages/postpage/postpage';
+
 
 @NgModule({
   declarations: [
@@ -18,9 +22,11 @@ import { FitnessPage } from '../pages/fitness-page/fitness-page';
     HomePage,
     FirstPage,
     PostListPage,
+
     BeautyPage,
     YogaPage,
-    FitnessPage 
+    FitnessPage,
+    Postpage
   ],
   imports: [
     BrowserModule,
@@ -32,9 +38,11 @@ import { FitnessPage } from '../pages/fitness-page/fitness-page';
     HomePage,
     FirstPage,
     PostListPage,
+
     BeautyPage,
     YogaPage,
-    FitnessPage 
+    FitnessPage,
+    Postpage
   ],
   providers: [
     StatusBar,

@@ -4,6 +4,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { FirstPage  } from '../pages/first-page/first-page';
+import { Postpage} from '../pages/postpage/postpage';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -20,4 +22,3 @@ export class MyApp {
     });
   }
 }
-
