@@ -8,13 +8,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
+import { Postpage} from '../pages/postpage/postpage';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     FirstPage,
-    PostListPage
+    PostListPage,
+    Postpage
 
   ],
   imports: [
@@ -26,7 +28,8 @@ import { PostListPage} from '../pages/post-list-page/post-list-page';
     MyApp,
     HomePage,
     FirstPage,
-    PostListPage
+    PostListPage,
+    Postpage
   ],
   providers: [
     StatusBar,
