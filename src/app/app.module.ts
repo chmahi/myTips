@@ -8,25 +8,33 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
+import { BeautyPage } from '../pages/beauty-page/beauty-page';
+import {  YogaPage } from '../pages/yoga-page/yoga-page';
+import { FitnessPage } from '../pages/fitness-page/fitness-page';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     FirstPage,
-    PostListPage
-
+    PostListPage,
+    BeautyPage,
+    YogaPage,
+    FitnessPage 
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{tabsPlacement:'top'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     FirstPage,
-    PostListPage
+    PostListPage,
+    BeautyPage,
+    YogaPage,
+    FitnessPage 
   ],
   providers: [
     StatusBar,
