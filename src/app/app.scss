@@ -18,53 +18,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster');
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import url('https://fonts.googleapis.com/css?family=Ropa+Sans');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
 @import '../assets/sass/variable';
- .card-title-md{
-        margin: 0px;
-        padding: 0px;
-    }
-    .title{
-        h4{
-            font-family: 'Ropa Sans', sans-serif;
-            font-size: 15px;
-            margin: 0px;
-            padding: 10px 45px 0px 0px;
-            position: relative;
-        }
-            .date{
-            position: absolute;
-            right: 15px;
-            font-size: 8px;
-            
-        }
-    }
-    .para{
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        margin: 0px;
-        padding: 0px;
-    }
-    .card-content-md{
-        padding: 0px 0px 0px 13px;
-    }
-    .grid{
-        margin: 0px;
-        padding: 0px;
-    }
-    .heart {
-        color: #ff514e;
-         font-size: 9px;
-    }
-    .happy{
-        color: #c3e198;
-         font-size: 9px;
-    }
-    .heart-count{
-        color: black;
-        font-size: 9px;
-    }
-    .happy-count{
-        color: black;
-        font-size: 9px;
-    }
+@import '../assets/sass/mixins';
+@import '../assets/sass/main';
