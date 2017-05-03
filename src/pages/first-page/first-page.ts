@@ -14,8 +14,10 @@ import { PostListPage} from '../post-list-page/post-list-page';
   selector: 'page-first-page',
   templateUrl: 'first-page.html',
 })
-export class FirstPage {
 
+
+export class FirstPage {
+   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
