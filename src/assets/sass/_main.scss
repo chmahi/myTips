@@ -1,0 +1,76 @@
+.card-title-md{
+    margin: 0px;
+    padding: 0px;
+}
+.title{
+    h4{
+        font-family: 'Ropa Sans', sans-serif;
+        font-size: 15px;
+        margin: 0px;
+        padding: 10px 50px 0px 0px;
+        position: relative;
+        font-weight: bold;
+    }
+        .date{
+        position: absolute;
+        right: 15px;
+        font-size: 8px;
+        margin-top: -5px;
+        top: 50%;
+        right: 50%;
+        margin-right: -120px;
+    }
+}
+    .para{
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        margin: 0px;
+        padding: 0px;
+    }
+    .card-content-md{
+        padding: 0px 0px 0px 13px;
+    }
+    .grid{
+        margin: 0px;
+        padding: 0px;
+    }
+    .heart {
+        color:$color-red;
+         font-size: 9px;
+    }
+    .happy{
+        color: #c3e198;
+         font-size: 9px;
+    }
+    .heart-count{
+        color: $secondary-color;
+        font-size: 9px;
+    }
+    .happy-count{
+        color:$secondary-color;
+        font-size: 9px;
+    }
+     .tabs-md .tab-button{
+        color: $heading-color;
+        min-height: none;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }  
+    .tabs-md .tab-button[aria-selected="true"] {
+        padding: 0;
+        color: $heading-color;
+        min-height: none;
+        font-weight: bold;
+        font-family: 'Roboto', sans-serif;
+    }
+    .header{
+        text-align: center;
+        font-size: 20px;
+        @include horizontal-gradient(#8ec73e,#cbe62c );
+        color: white;
+        font-family: 'Ropa Sans', sans-serif;
+    h3{
+        margin: 0px;
+        padding: 0px;
+        }
+    }

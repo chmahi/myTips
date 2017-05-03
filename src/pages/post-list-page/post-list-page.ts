@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { BeautyPage } from '../beauty-page/beauty-page';
 import {  YogaPage } from '../yoga-page/yoga-page';
 import { FitnessPage } from '../fitness-page/fitness-page';
@@ -14,6 +14,20 @@ import { FitnessPage } from '../fitness-page/fitness-page';
 //   selector: 'page-post-list-page',
 //   templateUrl: 'post-list-page.html',
 // })
+@Component({
+  template: `
+    <ion-header>
+      <ion-navbar>
+        <ion-title>Tabs</ion-title>
+      </ion-navbar>
+    </ion-header>
+    <ion-content>
+    </ion-content>
+`})
+export class TabIconTextContentPage {
+  isAndroid: boolean = false;
+}
+
 @Component({
   template: `
     <ion-tabs>
