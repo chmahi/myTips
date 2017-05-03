@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Postpage } from '../postpage/postpage';
+import { FirstPage } from '../first-page/first-page';
+
 
 /**
  * Generated class for the YogaPage page.
@@ -20,5 +23,9 @@ export class YogaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad YogaPage');
   }
-
+  callPost(){
+    //this.navCtrl.setRoot(FirstPage);
+   // this.navCtrl.setRoot(Postpage)
+    this.navCtrl.push( Postpage );
+  }
 }
