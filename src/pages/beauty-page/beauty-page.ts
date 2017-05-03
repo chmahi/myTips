@@ -21,4 +21,8 @@ export class BeautyPage {
     console.log('ionViewDidLoad BeautyPage');
   }
 
+  secondPage(){
+    
+  }
+
 }

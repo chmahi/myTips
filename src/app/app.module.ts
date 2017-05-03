@@ -30,7 +30,7 @@ import { Postpage} from '../pages/postpage/postpage';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{tabsPlacement:'top'})
+    IonicModule.forRoot(MyApp,{tabsPlacement:'top', tabsHideOnSubPages:'true'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
