@@ -1,7 +1,10 @@
 page-postpage {
   .clear{clear:both}
+  ion-content{
+    background: $body-color !important;
+  }
     .postBlock{
-      background: $body-color;
+      // background: ;
       padding-bottom: 30px;
       .postImg{
         z-index: 99;
