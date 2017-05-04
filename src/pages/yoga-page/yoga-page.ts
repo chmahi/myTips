@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Postpage } from '../postpage/postpage';
 import { FirstPage } from '../first-page/first-page';
 
-
 /**
  * Generated class for the YogaPage page.
  *
