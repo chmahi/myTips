@@ -1,22 +1,41 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Component,  ViewChild  } from '@angular/core';
+import { FormGroup,FormControl } from '@angular/forms';
+import {Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirstPage  } from '../pages/first-page/first-page';
-
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  @ViewChild(Nav) nav: Nav;
+
+  gform;
+  gender;
+  
   rootPage:any =  FirstPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
+   pages: Array<{title: string, component: any}>;
+
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    this.initializeApp();
+    this.gform = new FormGroup({
+    "gender": new FormControl({value: 'male', disabled: false})
+});
+    // used for an example of ngFor and navigation
+  
+  }
+    doSubmit(event) {
+    console.log('Submitting form', this.gform.value);
+    event.preventDefault();
+  }
+    initializeApp() {
+    this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      splashScreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 }

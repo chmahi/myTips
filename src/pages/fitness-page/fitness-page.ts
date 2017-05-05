@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SearchPage } from '../search-page/search-page';
 /**
  * Generated class for the FitnessPage page.
  *
@@ -20,5 +20,7 @@ export class FitnessPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FitnessPage');
   }
-
+   searchPage(){
+    this.navCtrl.push( SearchPage );
+  }
 }

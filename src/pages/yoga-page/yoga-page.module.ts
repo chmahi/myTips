@@ -7,7 +7,9 @@ import { YogaPage } from './yoga-page';
     YogaPage,
   ],
   imports: [
-    IonicModule.forRoot(YogaPage),
+    IonicModule.forRoot(YogaPage, {
+       menuType: 'push',
+    }),
   ],
   exports: [
     YogaPage

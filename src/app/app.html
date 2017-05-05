@@ -1,2 +1,31 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Gender</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-nav [root]="rootPage"></ion-nav>
+  <ion-content>
+    <form (submit)="doSubmit($event)" [formGroup]="gform">
+      <ion-list radio-group  formControlName="gender">
+  
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio checked="true" value="male"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Any</ion-label>
+          <ion-radio value="any"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content ></ion-nav>

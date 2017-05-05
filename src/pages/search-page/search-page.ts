@@ -1,26 +1,24 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
+
 /**
- * Generated class for the Postpage page.
+ * Generated class for the SearchPage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
 @IonicPage()
 @Component({
-  selector: 'page-postpage',
-  templateUrl: 'postpage.html',
+  selector: 'page-search-page',
+  templateUrl: 'search-page.html',
 })
-export class Postpage {
+export class SearchPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Postpage');
+    console.log('ionViewDidLoad SearchPage');
   }
-   searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
+
 }
