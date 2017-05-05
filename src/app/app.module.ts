@@ -14,7 +14,7 @@ import {  YogaPage } from '../pages/yoga-page/yoga-page';
 import { FitnessPage } from '../pages/fitness-page/fitness-page';
 
 import { Postpage} from '../pages/postpage/postpage';
-
+import { SearchPage } from '../pages/search-page/search-page';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { Postpage} from '../pages/postpage/postpage';
     HomePage,
     FirstPage,
     PostListPage,
-
     BeautyPage,
     YogaPage,
     FitnessPage,
-    Postpage
+    Postpage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +38,11 @@ import { Postpage} from '../pages/postpage/postpage';
     HomePage,
     FirstPage,
     PostListPage,
-
     BeautyPage,
     YogaPage,
     FitnessPage,
-    Postpage
+    Postpage,
+    SearchPage
   ],
   providers: [
     StatusBar,

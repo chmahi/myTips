@@ -55,7 +55,9 @@
         min-height: none;
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
+        min-height: 2.2em;
     }  
+    
     .tabs-md .tab-button[aria-selected="true"] {
         padding: 0;
         color: $heading-color;
@@ -80,10 +82,43 @@
             content: '';
             position: absolute;
             display:block;
-            height: 5px;
+            height: 4px;
             background-color:$color-green;
             bottom: 0px;
             left:0px;
             right:0px;
         }
+    }
+    
+    .button-md:hover:not(.disable-hover){
+        background-color: none;
+    }
+    
+    element.style {
+        margin-top: 37px;
+    }
+    .toolbar-md {
+    min-height: 36px;
+    margin: 0px;
+    padding: 0px;
+    }
+    
+    .toolbar-title-md{
+        color:$color-white;
+        font-size: 19px;
+        line-height: 28px;
+        font-family: 'Ropa Sans', sans-serif;
+    } 
+    .toolbar-background-md {
+         @include horizontal-gradient(#8ec73e,#cbe62c );
+    }
+    
+    .item-radio-checked.item-md ion-label {
+        color:$color-green;
+    }
+   .radio-md .radio-inner {
+        background-color:$color-green;
+    }
+   .item-radio-checked .radio-md .radio-icon{
+        border-color:$color-green;
     }

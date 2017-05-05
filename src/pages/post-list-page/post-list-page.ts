@@ -28,6 +28,7 @@ export class TabIconTextContentPage {
   isAndroid: boolean = false;
 }
 
+
 @Component({
   template: `
     <ion-tabs>
@@ -46,7 +47,7 @@ export class PostListPage {
      this.tab2 = BeautyPage;
      this.tab3 = FitnessPage;
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostListPage');
   }

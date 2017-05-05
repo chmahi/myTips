@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { SearchPage } from '../search-page/search-page';
 /**
  * Generated class for the BeautyPage page.
  *
@@ -21,8 +21,8 @@ export class BeautyPage {
     console.log('ionViewDidLoad BeautyPage');
   }
 
-  secondPage(){
-    
+   searchPage(){
+    this.navCtrl.push( SearchPage );
   }
 
 }
