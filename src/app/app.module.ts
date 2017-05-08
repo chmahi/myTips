@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -15,7 +16,7 @@ import { FitnessPage } from '../pages/fitness-page/fitness-page';
 
 import { Postpage} from '../pages/postpage/postpage';
 import { SearchPage } from '../pages/search-page/search-page';
-
+import { TipsService } from '../providers/tips-service';
 @NgModule({
   declarations: [
     MyApp,
@@ -27,6 +28,8 @@ import { SearchPage } from '../pages/search-page/search-page';
     FitnessPage,
     Postpage,
     SearchPage
+    
+    
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { SearchPage } from '../pages/search-page/search-page';
   ],
   providers: [
     StatusBar,
+    TipsService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
