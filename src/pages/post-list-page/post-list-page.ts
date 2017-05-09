@@ -31,7 +31,7 @@ export class TabIconTextContentPage {
 
 @Component({
   template: `
-    <ion-tabs>
+    <ion-tabs preloadTabs="false" animation="none">
       <ion-tab tabTitle="Yoga"  [root]="tab1"></ion-tab>
       <ion-tab tabTitle="Beauty"  [root]="tab2"></ion-tab>
        <ion-tab tabTitle="Fitness"  [root]="tab3"></ion-tab>
