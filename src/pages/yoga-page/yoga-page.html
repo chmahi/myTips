@@ -28,65 +28,14 @@
    </ion-grid>
 </ion-header>
 <ion-content>
-<ion-card (click)="callPost()">
+<ion-card (click)="callPost(tip)" *ngFor="let tip of tips">
   <img src="assets/images/imag1.png"/>
   <ion-card-content class="card-content">
     <ion-card-title class="title">
-      <h4>Morning Jag 1 - Yoga <span class="date">05 Apr 17</span></h4>
+      <h4>{{tip.title}} <span class="date">05 Apr 17</span></h4>
     </ion-card-title>
     <p class="para">
-     There is no one who loves pain itself...
-    </p>
-    <ion-grid class="icons">
-      <ion-row>
-      <ion-col col-2 class="heart"><ion-icon name="heart"></ion-icon><span class="heart-count"> 24</span></ion-col>
-       <ion-col col-2 class="happy"> <ion-icon name="happy"></ion-icon><span class="happy-count"> 24</span></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
-<ion-card (click)="callPost()">
-  <img src="assets/images/imag1.png"/>
-  <ion-card-content class="card-content">
-    <ion-card-title class="title">
-      <h4>Morning Jag 1 - Yoga <span class="date">05 Apr 17</span></h4>
-    </ion-card-title>
-    <p class="para">
-     There is no one who loves pain itself...
-    </p>
-    <ion-grid class="icons">
-      <ion-row>
-      <ion-col col-2 class="heart"><ion-icon name="heart"></ion-icon><span class="heart-count"> 24</span></ion-col>
-       <ion-col col-2 class="happy"> <ion-icon name="happy"></ion-icon><span class="happy-count"> 24</span></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
-<ion-card (click)="callPost()">
-  <img src="assets/images/imag1.png"/>
-  <ion-card-content class="card-content">
-    <ion-card-title class="title">
-      <h4>Morning Jag 1 - Yoga <span class="date">05 Apr 17</span></h4>
-    </ion-card-title>
-    <p class="para">
-     There is no one who loves pain itself...
-    </p>
-    <ion-grid class="icons">
-      <ion-row>
-      <ion-col col-2 class="heart"><ion-icon name="heart"></ion-icon><span class="heart-count"> 24</span></ion-col>
-       <ion-col col-2 class="happy"> <ion-icon name="happy"></ion-icon><span class="happy-count"> 24</span></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-card-content>
-</ion-card>
-<ion-card (click)="callPost()">
-  <img src="assets/images/imag1.png"/>
-  <ion-card-content class="card-content">
-    <ion-card-title class="title">
-      <h4>Morning Jag 1 - Yoga <span class="date">05 Apr 17</span></h4>
-    </ion-card-title>
-    <p class="para">
-     There is no one who loves pain itself...
+    {{tip.description}}
     </p>
     <ion-grid class="icons">
       <ion-row>

@@ -28,10 +28,12 @@ export class YogaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad YogaPage');
   }
-  callPost(){
+  callPost(value){
     //this.navCtrl.setRoot(FirstPage);
    // this.navCtrl.setRoot(Postpage)
-    this.navCtrl.push( Postpage );
+    this.navCtrl.push( Postpage,{
+      postValue:value
+    });
   }
    searchPage(){
     this.navCtrl.push( SearchPage );

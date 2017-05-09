@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,6 +18,7 @@ import { FitnessPage } from '../pages/fitness-page/fitness-page';
 import { Postpage} from '../pages/postpage/postpage';
 import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -27,12 +29,12 @@ import { TipsService } from '../providers/tips-service';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage
-    
+    SearchPage,
     
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp,{tabsPlacement:'top', tabsHideOnSubPages:'true'})
   ],
   bootstrap: [IonicApp],
