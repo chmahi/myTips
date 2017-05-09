@@ -18,7 +18,7 @@ export class TipsService {
   if (this.data) {
     // already loaded data
     return Promise.resolve(this.data);
-  }
+  }else{
 
   // don't have the data yet
   return new Promise(resolve => {
@@ -34,5 +34,6 @@ export class TipsService {
         resolve(this.data);
       });
   });
+  }
 }
 }
