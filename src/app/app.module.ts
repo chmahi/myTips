@@ -28,9 +28,7 @@ import { TipsService } from '../providers/tips-service';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage
-    
-    
+    SearchPage  
   ],
   imports: [
     BrowserModule,
