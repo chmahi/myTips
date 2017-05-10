@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search-page/search-page';
+import { TipsService } from '../../providers/tips-service';
+import { Http } from '@angular/http';
 /**
  * Generated class for the Postpage page.
  *
@@ -11,10 +13,15 @@ import { SearchPage } from '../search-page/search-page';
 @Component({
   selector: 'page-postpage',
   templateUrl: 'postpage.html',
+  providers: [TipsService]
 })
 export class Postpage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public tip;
+  public postParam:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public tipsService: TipsService ) {
+    this.loadTips();
+    this.postParam = navParams.get("postValue");
+     console.log(this.postParam);
   }
 
   ionViewDidLoad() {
@@ -22,5 +29,11 @@ export class Postpage {
   }
    searchPage(){
     this.navCtrl.push( SearchPage );
+  }
+    loadTips(){
+    this.tipsService.load()
+    .then(data => {
+      this.tip = data[0];
+    });
   }
 }
