@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostListPage} from '../post-list-page/post-list-page';
-
+import { TipsService } from '../../providers/tips-service';
 
 /**
  * Generated class for the FirstPage page.
@@ -27,4 +27,5 @@ export class FirstPage {
    secondPage(){
     this.navCtrl.push( PostListPage );
   }
+
 }

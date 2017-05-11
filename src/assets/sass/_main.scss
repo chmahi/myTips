@@ -66,6 +66,7 @@
         font-family: 'Roboto', sans-serif;
     }
     .header{
+        position: relative;
         text-align: center;
         font-size: 20px;
         @include horizontal-gradient(#8ec73e,#cbe62c );
@@ -76,6 +77,10 @@
         padding: 0px;
         }
     }
+    .search{
+            position: absolute;
+            top: -10px
+        }
     
     .tabs-md .tab-button[aria-selected="true"]{
         &:after{
@@ -124,4 +129,11 @@
     }
     .tabbar.show-tabbar.tabs-md[tabsLayout="icon-hide"] .tab-button, .tabs-md[tabsLayout="title-hide"] .tab-button, .tabs-md .tab-button.icon-only, .tabs-md .tab-button.has-title-only {
     padding: 0px;
+}
+.searchbar-md .searchbar-search-icon{
+    left: 19px;
+    top: 6px;
+}
+.searchbar-md .searchbar-input{
+    height: 30px;
 }
