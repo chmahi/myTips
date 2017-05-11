@@ -19,6 +19,10 @@ import { Postpage} from '../pages/postpage/postpage';
 import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
 
+import { ParallaxHeader } from '../components/parallax-header/parallax-header';
+
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -29,7 +33,8 @@ import { TipsService } from '../providers/tips-service';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage  
+    SearchPage,
+    ParallaxHeader 
   ],
   imports: [
     BrowserModule,
