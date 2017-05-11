@@ -122,3 +122,6 @@
    .item-radio-checked .radio-md .radio-icon{
         border-color:$color-green;
     }
+    .tabbar.show-tabbar.tabs-md[tabsLayout="icon-hide"] .tab-button, .tabs-md[tabsLayout="title-hide"] .tab-button, .tabs-md .tab-button.icon-only, .tabs-md .tab-button.has-title-only {
+    padding: 0px;
+}
