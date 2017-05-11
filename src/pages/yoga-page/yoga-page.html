@@ -26,6 +26,13 @@
     </ion-col>
     </ion-row>
    </ion-grid>
+   <!--<ion-grid class="search">
+     <ion-row>
+       <ion-col col-6>
+          <ion-searchbar ></ion-searchbar>
+       </ion-col>
+     </ion-row>
+   </ion-grid>-->
 </ion-header>
 <ion-content>
 
@@ -36,7 +43,7 @@
       <h4>{{tip.title}} <span class="date">05 Apr 17</span></h4>
     </ion-card-title>
     <p class="para">
-    {{tip.description}}
+    {{tip.description | slice:0:40}}
 
     </p>
     <ion-grid class="icons">

@@ -8,6 +8,7 @@ page-postpage {
       padding-bottom: 30px;
       .postImg{
         z-index: 99;
+        height: 40vh;
       }
       .postContent{
         margin: 0 20px;
@@ -18,12 +19,11 @@ page-postpage {
         -webkit-box-shadow: 0px 0px 8px 0px rgba(122,120,122,1);
         -moz-box-shadow: 0px 0px 8px 0px rgba(122,120,122,1);
         box-shadow: 0px 0px 8px 0px rgba(122,120,122,1);
+        width: calc(100% - 40px);
         .postHead{
           padding: 15px 10px;
-          border-bottom: 5px solid $body-color;
-          -webkit-box-shadow: 0px -3px 18px -6px rgba(122,120,122,1);
-          -moz-box-shadow: 0px -3px 18px -6px rgba(122,120,122,1);
-          box-shadow: 0px -3px 18px -6px rgba(122,120,122,1);
+          border-bottom: 1px solid lighten($color-gray,32%);
+          
           .postReview{
             float: left;
             h4{
