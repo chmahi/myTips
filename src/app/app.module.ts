@@ -16,6 +16,7 @@ import {  YogaPage } from '../pages/yoga-page/yoga-page';
 import { FitnessPage } from '../pages/fitness-page/fitness-page';
 
 import { Postpage} from '../pages/postpage/postpage';
+import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
 import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
 
@@ -34,7 +35,8 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     FitnessPage,
     Postpage,
     SearchPage,
-    ParallaxHeader 
+    ParallaxHeader,
+    PostpageFirst
   ],
   imports: [
     BrowserModule,
@@ -51,7 +53,8 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage
+    SearchPage,
+    PostpageFirst
   ],
   providers: [
     StatusBar,
