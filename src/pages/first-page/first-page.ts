@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PostListPage} from '../post-list-page/post-list-page';
+import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
 
 /**
@@ -24,8 +24,8 @@ export class FirstPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
   }
-   secondPage(){
-    this.navCtrl.push( PostListPage );
+   PostpageFirst(){
+    this.navCtrl.push( PostpageFirst );
   }
 
 }
