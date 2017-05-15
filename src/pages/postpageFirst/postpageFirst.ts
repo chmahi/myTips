@@ -17,11 +17,13 @@ import { Http } from '@angular/http';
   providers: [TipsService]
 })
 export class PostpageFirst {
+
   public tips = [];
    slides = [1,2,3,4];
    mySlideOptions = {
    pager:true
   };
+
   constructor(public navCtrl: NavController, public tipsService: TipsService ) {
     this.loadTips();
     
