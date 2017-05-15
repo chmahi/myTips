@@ -17,7 +17,7 @@ import { Http } from '@angular/http';
   providers: [TipsService]
 })
 export class PostpageFirst {
-  public tip:any;
+  public tip:any = [];
   constructor(public navCtrl: NavController, public tipsService: TipsService ) {
     this.loadTips();
     
