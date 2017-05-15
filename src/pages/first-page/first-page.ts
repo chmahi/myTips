@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostpageFirst } from '../postpageFirst/postpageFirst';
+// import { SliderPage } from '../slider-page/slider-page';
 import { TipsService } from '../../providers/tips-service';
 
 /**
@@ -26,6 +27,7 @@ export class FirstPage {
   }
    PostpageFirst(){
     this.navCtrl.push( PostpageFirst );
+    
   }
 
 }

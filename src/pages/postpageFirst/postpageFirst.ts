@@ -17,7 +17,11 @@ import { Http } from '@angular/http';
   providers: [TipsService]
 })
 export class PostpageFirst {
-  public tip:any;
+  public tips = [];
+   slides = [1,2,3,4];
+   mySlideOptions = {
+   pager:true
+  };
   constructor(public navCtrl: NavController, public tipsService: TipsService ) {
     this.loadTips();
     
@@ -38,8 +42,8 @@ export class PostpageFirst {
     loadTips(){
     this.tipsService.load()
     .then(data => {
-      this.tip = data[0];
-     
+      this.tips = data;
+  
     });
   }
 }
