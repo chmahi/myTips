@@ -8,7 +8,7 @@ page-postpage-first {
       padding-bottom: 30px;
       .postImg{
         z-index: 99;
-        height: 40vh;
+        
       }
       .postContent{
         margin: 0 20px;
@@ -53,6 +53,7 @@ page-postpage-first {
           }
           .postField{
             padding: 10px;
+            margin-bottom: 10px;
             p{
               font-size: 12px;
               font-family: 'Roboto', sans-serif;
@@ -70,4 +71,15 @@ page-postpage-first {
                 font-family: 'Ropa Sans', sans-serif;
               }
     }
+   
+   
+  .swiper-slide img{
+    height: auto;
+
+    width: 100%;
+  }
+
+  .scroll-content{
+    text-align: left;
+  }
 }

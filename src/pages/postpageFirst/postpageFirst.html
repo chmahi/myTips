@@ -1,16 +1,4 @@
-<!--
-  Generated template for the Postpage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!--<ion-header>
-
-  <ion-navbar>
-    <ion-title>postpage</ion-title>
-  </ion-navbar>
-
-</ion-header>-->
 
 <ion-header class="header">
    <ion-grid>
@@ -27,14 +15,15 @@
    </ion-grid>
 </ion-header>
 <!--<ion-content parallax-header>
-  <!<div class="postBlock">
+ 
+ <div class="postBlock">
     <div class="postImg">
       <img src="assets/images/post.png">
     </div>
     <div class="postContent">
       <div class="postHead">
-        <div class="postReview">
-          <h4>{{postParam.title}}</h4>
+        <div class="postReview">         
+          <h4>{{tip.title}}</h4>
           <div class="reviews">
             <ion-icon class="heartIcon" name="heart"></ion-icon>
             <span>24</span>
@@ -46,14 +35,30 @@
         <div class="clear"></div>
       </div>
       <div class="postField">
-        <p>{{postParam.description}}</p>
+        <p>{{tip.description}}</p>
       </div>
     </div>
-  </div>-->
-<!--</ion-content>-->
-<ion-content parallax-header>
+  </div>
+  
  
- <div class="postBlock">
+</ion-content>-->
+
+
+<!--<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Image Search
+    </ion-title>
+  </ion-navbar>
+</ion-header>-->
+
+<ion-content >
+
+
+  <ion-slides>
+    <ion-slide *ngFor="let tip of tips;let i=index">
+      <div class="content-md">
+      <div class="postBlock scroll-content">
     <div class="postImg">
       <img src="assets/images/post.png">
     </div>
@@ -76,6 +81,9 @@
       </div>
     </div>
   </div>
-  
- 
+
+      </div>
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>

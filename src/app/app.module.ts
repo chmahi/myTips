@@ -22,7 +22,7 @@ import { TipsService } from '../providers/tips-service';
 
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
-
+// import { SliderPage } from '../pages/slider-page/slider-page';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     Postpage,
     SearchPage,
     ParallaxHeader,
-    PostpageFirst
+    PostpageFirst,
+    // SliderPage
   ],
   imports: [
     BrowserModule,
@@ -54,7 +55,8 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     FitnessPage,
     Postpage,
     SearchPage,
-    PostpageFirst
+    PostpageFirst,
+    // SliderPage
   ],
   providers: [
     StatusBar,
