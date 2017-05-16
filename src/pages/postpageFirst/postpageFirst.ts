@@ -23,7 +23,7 @@ export class PostpageFirst {
    mySlideOptions = {
    pager:true
   };
-
+  
   constructor(public navCtrl: NavController, public tipsService: TipsService ) {
     this.loadTips();
     

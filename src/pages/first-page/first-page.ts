@@ -20,14 +20,24 @@ import { TipsService } from '../../providers/tips-service';
 export class FirstPage {
    
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+     var temp = this;
+    var id = setInterval(function() {
+      temp.navCtrl.push( PostpageFirst );
+      clearInterval(id);
+    }, 6000);
+    
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
   }
-   PostpageFirst(){
-    this.navCtrl.push( PostpageFirst );
-    
-  }
+  
 
+Postpage(){
+  this.navCtrl.push( PostpageFirst );
+}
+
+  // setInterval(function() {
+  //   console.log("time on");
+  // }, 3000);
 }

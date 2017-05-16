@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { Postpage } from '../postpage/postpage';
 import { SearchPage } from '../search-page/search-page';
+import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
 /**
  * Generated class for the YogaPage page.
@@ -34,6 +35,9 @@ export class YogaPage {
   }
    searchPage(){
     this.navCtrl.push( SearchPage );
+  }
+   PostpageFirst(){
+    console.log(this.navCtrl);   
   }
   loadTips(){
     this.tipsService.load()
