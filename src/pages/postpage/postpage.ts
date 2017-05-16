@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SearchPage } from '../search-page/search-page';
+import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
 /**
@@ -16,12 +17,18 @@ import { Http } from '@angular/http';
   providers: [TipsService]
 })
 export class Postpage {
-  public tip = [];
-  public postParam:any;
-  constructor(public navCtrl: NavController, public navParams: NavParams,public tipsService: TipsService ) {
+
+  public tips = [];
+   slides = [1,2,3,4];
+   mySlideOptions = {
+   pager:true
+  };
+  
+  constructor(public navCtrl: NavController, public tipsService: TipsService ) {
     this.loadTips();
-    this.postParam = navParams.get("postValue");
-     console.log(this.postParam);
+    
+    //this.postParam = navParams.get("postValue");
+    // console.log(this.postParam);
   }
 
   ionViewDidLoad() {
@@ -30,10 +37,15 @@ export class Postpage {
    searchPage(){
     this.navCtrl.push( SearchPage );
   }
+   
+   PostListPage(){
+    this.navCtrl.push( PostListPage );
+  }
     loadTips(){
     this.tipsService.load()
     .then(data => {
-      this.tip = data[0];
+      this.tips = data;
+  
     });
   }
 }

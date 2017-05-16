@@ -17,12 +17,12 @@ body ion-app.md{
     }
         .date{
         position: absolute;
+        font-family: 'Ropa Sans', sans-serif;
         right: 15px;
         font-size: 8px;
         margin-top: -5px;
-        top: 50%;
-        right: 50%;
-        margin-right: -120px;
+        top: 50%;   
+        font-weight: 400;
     }
 }
     .para{
@@ -133,11 +133,24 @@ body ion-app.md{
     }
     .tabbar.show-tabbar.tabs-md[tabsLayout="icon-hide"] .tab-button, .tabs-md[tabsLayout="title-hide"] .tab-button, .tabs-md .tab-button.icon-only, .tabs-md .tab-button.has-title-only {
     padding: 0px;
-}
-.searchbar-md .searchbar-search-icon{
-    left: 19px;
-    top: 6px;
-}
-.searchbar-md .searchbar-input{
-    height: 30px;
-}
+    }
+    .searchbar-md .searchbar-search-icon{
+        left: 19px;
+        top: 6px;
+    }
+    .searchbar-md .searchbar-input{
+        height: 30px;
+    }
+    
+    .ion-icon{
+        margin-top: 3px;
+    }
+    .headLogo{
+        
+            width: 63px;
+    }
+    .heading{
+        
+        padding: 0px;
+        
+    }
