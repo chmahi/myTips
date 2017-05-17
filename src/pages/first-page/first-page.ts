@@ -24,7 +24,7 @@ export class FirstPage {
     var id = setInterval(function() {
       temp.navCtrl.push( PostpageFirst );
       clearInterval(id);
-    }, 6000);
+    }, 2000);
     
 }
 
