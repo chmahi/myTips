@@ -17,6 +17,7 @@ import { TipsService } from '../../providers/tips-service';
 })
 export class YogaPage {
   tips;   
+  public search = false;
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService ) {
   this.loadTips();
   }
@@ -35,6 +36,12 @@ export class YogaPage {
   }
    searchPage(){
     this.navCtrl.push( SearchPage );
+  }
+  showSearch(){
+     this.search = true;
+  }
+  hideSearch(){
+     this.search = false;
   }
    PostpageFirst(){
     console.log(this.navCtrl);   
