@@ -36,4 +36,10 @@ export class TipsService {
   });
   }
 }
+
+  filterItems(searchTerm){ 
+      return this.data.filter((tip) => {
+          return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      });  
+  }
 }

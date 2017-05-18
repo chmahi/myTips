@@ -162,3 +162,15 @@ body ion-app.md{
         top: 19px;
         font-size: 18px;
     }
+    .spinner-container {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+
+
+
+
+    .search .searchbar-has-value.searchbar-has-focus .searchbar-clear-icon{
+        display: none;
+    }
