@@ -12,6 +12,23 @@
 
 </ion-header>-->
 
+
+<!--<ion-content>
+ 
+    <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+ 
+    <div *ngIf="searching" class="spinner-container">
+        <ion-spinner></ion-spinner>
+    </div>
+ 
+    <ion-list>
+        <ion-item *ngFor="let item of items">
+            {{item.title}}
+        </ion-item>
+    </ion-list>
+ 
+</ion-content>-->
+
 <ion-header class="header">
    <ion-grid>
     <ion-row>
@@ -22,9 +39,26 @@
       <img class="headLogo" src="assets/images/logo-small.png">
     </ion-col>
     <ion-col col-3>
-      <ion-icon (click)="searchPage()"  md="md-search"></ion-icon>
+      <ion-icon  (click)="showSearch()"  md="md-search"></ion-icon>
     </ion-col>
     </ion-row>
+   </ion-grid>
+     <ion-grid *ngIf="search" class="search">
+     <ion-row>
+       <ion-col col-12>
+          <ion-searchbar >
+          </ion-searchbar>
+          <div *ngIf="searching" class="spinner-container">
+            <ion-spinner></ion-spinner>
+          </div>
+          <ion-list>
+              <ion-item *ngFor="let tip of tips">
+                  {{tip.title}}
+              </ion-item>
+          </ion-list>
+           <ion-icon class="closeButton" (click)=" hideSearch()" md="ios-close-circle-outline"></ion-icon>
+       </ion-col>
+     </ion-row>
    </ion-grid>
 </ion-header>
 <ion-content>

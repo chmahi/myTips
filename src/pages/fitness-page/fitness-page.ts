@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import { SearchPage } from '../search-page/search-page';
 import { Postpage } from '../postpage/postpage';
 import { TipsService } from '../../providers/tips-service';
+import { LoadingController } from 'ionic-angular';
+
 /**
  * Generated class for the FitnessPage page.
  *
@@ -15,9 +17,12 @@ import { TipsService } from '../../providers/tips-service';
   templateUrl: 'fitness-page.html',
 })
 export class FitnessPage {
-  tips;   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService ) {
-  this.loadTips();
+  tips; 
+  
+  
+  public search = false;   
+  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService,  public loading: LoadingController ) {
+    this.loadTips();
   }
 
   ionViewDidLoad() {
@@ -26,7 +31,13 @@ export class FitnessPage {
    searchPage(){
     this.navCtrl.push( SearchPage );
   };
-
+  showSearch(){
+     this.search = true;
+  }
+  hideSearch(){
+     this.search = false;
+  }
+ 
   callPost(value){
     //this.navCtrl.setRoot(FirstPage);
    // this.navCtrl.setRoot(Postpage)
@@ -36,10 +47,18 @@ export class FitnessPage {
   };
 
   loadTips(){
-    this.tipsService.load()
+
+    let loader = this.loading.create({
+    content: 'Getting latest entries...',
+    });
+  loader.present().then(() => {
+     this.tipsService.load()
     .then(data => {
       this.tips = data;
+      loader.dismiss();
     });
-  };
+   // loader.dismiss();
+  });
   
+  };
 }

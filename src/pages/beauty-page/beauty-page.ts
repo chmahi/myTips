@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angul
 import { SearchPage } from '../search-page/search-page';
 import { Postpage } from '../postpage/postpage';
 import { TipsService } from '../../providers/tips-service';
+import { LoadingController } from 'ionic-angular';
 /**
  * Generated class for the BeautyPage page.
  *
@@ -16,8 +17,9 @@ import { TipsService } from '../../providers/tips-service';
 })
 export class BeautyPage {
 
-  tips;   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService ) {
+  tips;  
+  public search = false; 
+  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
   }
 
@@ -28,12 +30,27 @@ export class BeautyPage {
    searchPage(){
     this.navCtrl.push( SearchPage );
   }
-    loadTips(){
-    this.tipsService.load()
+  showSearch(){
+     this.search = true;
+  }
+  hideSearch(){
+     this.search = false;
+  }
+   loadTips(){
+
+    let loader = this.loading.create({
+    content: 'Getting latest entries...',
+    });
+  loader.present().then(() => {
+     this.tipsService.load()
     .then(data => {
       this.tips = data;
+      loader.dismiss();
     });
-  }
+   // loader.dismiss();
+  });
+  
+  };
   callPost(value){
     //this.navCtrl.setRoot(FirstPage);
    // this.navCtrl.setRoot(Postpage)

@@ -4,6 +4,8 @@ import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
+import { LoadingController } from 'ionic-angular';
+
 /**
  * Generated class for the Postpage page.
  *
@@ -24,7 +26,7 @@ export class PostpageFirst {
    pager:true
   };
   
-  constructor(public navCtrl: NavController, public tipsService: TipsService ) {
+  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController ) {
     this.loadTips();
     
     //this.postParam = navParams.get("postValue");
@@ -34,6 +36,7 @@ export class PostpageFirst {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostpageFirst');
   }
+  
    searchPage(){
     this.navCtrl.push( SearchPage );
   }
@@ -41,11 +44,19 @@ export class PostpageFirst {
    PostListPage(){
     this.navCtrl.push( PostListPage );
   }
-    loadTips(){
-    this.tipsService.load()
-    .then(data => {
-      this.tips = data;
-  
+  loadTips(){
+
+    let loader = this.loading.create({
+    content: 'Getting latest entries...',
     });
+  loader.present().then(() => {
+     this.tipsService.load()
+    .then(data => {
+      this.tips = data;  
+      loader.dismiss();
+    });
+    //;
+  });
+  
   }
 }

@@ -56,12 +56,13 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     Postpage,
     SearchPage,
     PostpageFirst,
+    
     // SliderPage
   ],
   providers: [
     StatusBar,
     TipsService,
-    SplashScreen,
+    SplashScreen, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
