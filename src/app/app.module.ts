@@ -19,7 +19,8 @@ import { Postpage} from '../pages/postpage/postpage';
 import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
 import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
-
+import { LoadPage } from '../pages/load-page/load-page';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
 // import { SliderPage } from '../pages/slider-page/slider-page';
@@ -37,6 +38,7 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     SearchPage,
     ParallaxHeader,
     PostpageFirst,
+    LoadPage,
     // SliderPage
   ],
   imports: [
@@ -56,13 +58,14 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     Postpage,
     SearchPage,
     PostpageFirst,
-    
+    LoadPage,
     // SliderPage
   ],
   providers: [
     StatusBar,
     TipsService,
-    SplashScreen, 
+    SplashScreen,
+    SocialSharing, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

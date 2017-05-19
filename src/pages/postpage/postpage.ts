@@ -4,6 +4,7 @@ import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
+import { SocialSharing } from '@ionic-native/social-sharing';
 /**
  * Generated class for the Postpage page.
  *
@@ -25,13 +26,22 @@ export class Postpage {
    pager:true
   };
   
-  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService ) {
+  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService, private sharingVar: SocialSharing ) {
     this.loadTips();
     
     this.postParam = navParams.get("postValue");
      console.log(this.postParam);
   }
-
+    otherShare(){
+    this.sharingVar.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"http://pointdeveloper.com")
+    .then(()=>{
+        alert("Success");
+      },
+      ()=>{
+         alert("failed")
+      })
+ 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad Postpage');
   }
@@ -49,4 +59,5 @@ export class Postpage {
   
     });
   }
+  
 }

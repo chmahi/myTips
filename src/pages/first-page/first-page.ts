@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostpageFirst } from '../postpageFirst/postpageFirst';
 // import { SliderPage } from '../slider-page/slider-page';
 import { TipsService } from '../../providers/tips-service';
+import { LoadPage } from '../load-page/load-page';
 
 /**
  * Generated class for the FirstPage page.
@@ -22,6 +23,7 @@ export class FirstPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
      var temp = this;
     var id = setInterval(function() {
+      temp.navCtrl.push( LoadPage );
       temp.navCtrl.push( PostpageFirst );
       clearInterval(id);
     }, 2000);
