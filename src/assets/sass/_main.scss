@@ -9,7 +9,7 @@ body ion-app.md{
 .title{
     h4{
         font-family: 'Ropa Sans', sans-serif;
-        font-size: 15px;
+        font-size: 18px;
         margin: 0px;
         padding: 10px 50px 0px 0px;
         position: relative;
@@ -19,7 +19,7 @@ body ion-app.md{
         position: absolute;
         font-family: 'Ropa Sans', sans-serif;
         right: 15px;
-        font-size: 8px;
+        font-size: 11px;
         margin-top: -5px;
         top: 50%;   
         font-weight: 400;
@@ -27,7 +27,7 @@ body ion-app.md{
 }
     .para{
         font-family: 'Roboto', sans-serif;
-        font-size: 12px;
+        font-size: 14px;
         margin: 0px;
         padding: 0px;
     }
@@ -59,8 +59,11 @@ body ion-app.md{
         min-height: none;
         font-weight: bold;
         font-family: 'Roboto', sans-serif;
-        min-height: 2.2em;
+        min-height: 38px;
     }  
+    .tabs-md .tab-button-text{
+        font-size: 14px;
+    }
     
     .tabs-md .tab-button[aria-selected="true"] {
         padding: 0;
@@ -142,12 +145,16 @@ body ion-app.md{
         height: 30px;
     }
     
-    .ion-icon{
-        margin-top: 3px;
+    ion-header{
+        ion-icon{
+        
+margin-top: 3px;
+        }
     }
+    
     .headLogo{
         
-            width: 63px;
+            width: 70px;
     }
     .heading{
         
@@ -168,9 +175,32 @@ body ion-app.md{
         padding: 10px;
     }
 
-
-
-
     .search .searchbar-has-value.searchbar-has-focus .searchbar-clear-icon{
         display: none;
     }
+
+
+
+
+.reviews{                
+    .heartIcon{
+    font-size: 1em;
+    color: $color-red;
+    line-height: 1.5em;
+    display: inline-block;
+    }
+    .happyIcon{
+    color: $color-green;
+    font-size: 1em;
+    line-height: 1.5em;
+    display: inline-block;
+    }
+    span{
+    font-size: 0.7em;
+    margin-right: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1em;
+    display: inline-block;
+    }
+   
+ }
