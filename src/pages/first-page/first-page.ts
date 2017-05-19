@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PostListPage} from '../post-list-page/post-list-page';
-
+import { PostpageFirst } from '../postpageFirst/postpageFirst';
+// import { SliderPage } from '../slider-page/slider-page';
+import { TipsService } from '../../providers/tips-service';
 
 /**
  * Generated class for the FirstPage page.
@@ -19,12 +20,24 @@ import { PostListPage} from '../post-list-page/post-list-page';
 export class FirstPage {
    
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+     var temp = this;
+    var id = setInterval(function() {
+      temp.navCtrl.push( PostpageFirst );
+      clearInterval(id);
+    }, 2000);
+    
+}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
   }
-   secondPage(){
-    this.navCtrl.push( PostListPage );
-  }
+  
+
+Postpage(){
+  this.navCtrl.push( PostpageFirst );
+}
+
+  // setInterval(function() {
+  //   console.log("time on");
+  // }, 3000);
 }

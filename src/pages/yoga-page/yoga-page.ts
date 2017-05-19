@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { Postpage } from '../postpage/postpage';
 import { SearchPage } from '../search-page/search-page';
+import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
+import { LoadingController } from 'ionic-angular';
 /**
  * Generated class for the YogaPage page.
  *
@@ -16,7 +18,10 @@ import { TipsService } from '../../providers/tips-service';
 })
 export class YogaPage {
   tips;   
-  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService ) {
+  searchTerm;
+  category;
+  public search = false;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
   }
   openMenu(){
@@ -35,11 +40,39 @@ export class YogaPage {
    searchPage(){
     this.navCtrl.push( SearchPage );
   }
-  loadTips(){
-    this.tipsService.load()
+  showSearch(){
+     this.search = true;
+  }
+  hideSearch(){
+     this.search = false;
+     this.searchTerm = "";
+     this.setFilteredItems();
+  }
+   PostpageFirst(){
+    console.log(this.navCtrl);   
+  }
+ public setFilteredItems() { 
+        this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
+  }
+  // filterItems(searchTerm){ 
+  //     return this.tips.filter((tip) => {
+  //         return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+  //     });  
+  // }
+   loadTips(){
+
+    let loader = this.loading.create({
+    content: 'Getting latest entries...',
+    });
+  loader.present().then(() => {
+     this.tipsService.load()
     .then(data => {
       this.tips = data;
+      loader.dismiss();
     });
+   // loader.dismiss();
+  });
+  
   }
  
 }

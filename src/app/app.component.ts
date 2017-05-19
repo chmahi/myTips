@@ -1,9 +1,11 @@
 import { Component,  ViewChild  } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
-import {Nav, Platform } from 'ionic-angular';
+import {Nav, Platform, LoadingController } from 'ionic-angular';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirstPage  } from '../pages/first-page/first-page';
+
 
 @Component({
   templateUrl: 'app.html'

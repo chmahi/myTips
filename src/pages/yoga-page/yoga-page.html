@@ -11,33 +11,41 @@
   </ion-navbar>
 
 </ion-header>-->
-
+ 
 <ion-header class="header">
    <ion-grid>
     <ion-row>
     <ion-col col-3>
      <ion-icon menuToggle  md="md-menu"></ion-icon>
     </ion-col>
-    <ion-col col-6>
-      <h3>My Tips</h3>
+    <ion-col class="heading" col-6 >
+       <img class="headLogo" src="assets/images/logo-small.png">
     </ion-col>
     <ion-col col-3>
-      <ion-icon (click)="searchPage()" md="md-search"></ion-icon>
+      <ion-icon (click)="showSearch()" md="md-search"></ion-icon>
     </ion-col>
     </ion-row>
+   </ion-grid>
+   <ion-grid *ngIf="search" class="search">
+     <ion-row>
+       <ion-col col-12>
+          <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()">
+          </ion-searchbar>
+           <ion-icon class="closeButton" (click)=" hideSearch()" md="ios-close-circle-outline"></ion-icon>
+       </ion-col>
+     </ion-row>
    </ion-grid>
 </ion-header>
 <ion-content>
 
-<ion-card (click)="callPost(tip)" *ngFor="let tip of tips">
+<ion-card (click)="PostpageFirst()" *ngFor="let tip of tips">
   <img src="assets/images/imag1.png"/>
   <ion-card-content class="card-content">
     <ion-card-title class="title">
-      <h4>{{tip.title}} <span class="date">05 Apr 17</span></h4>
+      <h4>{{tip.title}} <span class="date" >05 Apr 17</span></h4>
     </ion-card-title>
     <p class="para">
-    {{tip.description}}
-
+    {{tip.description | slice:0:40}}
     </p>
     <ion-grid class="icons">
       <ion-row>

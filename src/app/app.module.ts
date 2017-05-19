@@ -16,8 +16,13 @@ import {  YogaPage } from '../pages/yoga-page/yoga-page';
 import { FitnessPage } from '../pages/fitness-page/fitness-page';
 
 import { Postpage} from '../pages/postpage/postpage';
+import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
 import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
+
+import { ParallaxHeader } from '../components/parallax-header/parallax-header';
+
+// import { SliderPage } from '../pages/slider-page/slider-page';
 
 @NgModule({
   declarations: [
@@ -29,7 +34,10 @@ import { TipsService } from '../providers/tips-service';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage  
+    SearchPage,
+    ParallaxHeader,
+    PostpageFirst,
+    // SliderPage
   ],
   imports: [
     BrowserModule,
@@ -46,12 +54,15 @@ import { TipsService } from '../providers/tips-service';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage
+    SearchPage,
+    PostpageFirst,
+    
+    // SliderPage
   ],
   providers: [
     StatusBar,
     TipsService,
-    SplashScreen,
+    SplashScreen, 
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
