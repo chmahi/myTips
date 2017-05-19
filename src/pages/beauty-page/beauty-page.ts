@@ -18,6 +18,8 @@ import { LoadingController } from 'ionic-angular';
 export class BeautyPage {
 
   tips;  
+  searchTerm;
+  category;
   public search = false; 
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
@@ -33,8 +35,13 @@ export class BeautyPage {
   showSearch(){
      this.search = true;
   }
-  hideSearch(){
+ hideSearch(){
      this.search = false;
+     this.searchTerm = "";
+     this.setFilteredItems();
+  }
+  public setFilteredItems() { 
+        this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
    loadTips(){
 

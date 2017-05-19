@@ -18,11 +18,11 @@ import { LoadingController } from 'ionic-angular';
 })
 export class FitnessPage {
   tips; 
-  
-  
+  searchTerm;
+  category;
   public search = false;   
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService,  public loading: LoadingController ) {
-    this.loadTips();
+  this.loadTips();
   }
 
   ionViewDidLoad() {
@@ -34,8 +34,13 @@ export class FitnessPage {
   showSearch(){
      this.search = true;
   }
-  hideSearch(){
+ hideSearch(){
      this.search = false;
+     this.searchTerm = "";
+     this.setFilteredItems();
+  }
+  public setFilteredItems() { 
+        this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
  
   callPost(value){

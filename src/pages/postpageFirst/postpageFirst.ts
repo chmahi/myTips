@@ -7,7 +7,7 @@ import { Http } from '@angular/http';
 import { LoadingController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
-
+import { SocialSharing } from '@ionic-native/social-sharing';
 /**
  * Generated class for the Postpage page.
  *
@@ -28,13 +28,22 @@ export class PostpageFirst {
    pager:true
   };
   
-  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController ) {
+  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();
     
     //this.postParam = navParams.get("postValue");
     // console.log(this.postParam);
   }
-
+   otherShare(){
+    this.sharingVar.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"http://pointdeveloper.com")
+    .then(()=>{
+        alert("Success");
+      },
+      ()=>{
+         alert("failed")
+      })
+ 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostpageFirst');
   }
