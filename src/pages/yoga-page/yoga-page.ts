@@ -19,6 +19,7 @@ import { LoadingController } from 'ionic-angular';
 export class YogaPage {
   tips;   
   searchTerm;
+  category;
   public search = false;
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
@@ -51,7 +52,7 @@ export class YogaPage {
     console.log(this.navCtrl);   
   }
  public setFilteredItems() { 
-        this.tips = this.tipsService.filterItems(this.searchTerm); 
+        this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
   // filterItems(searchTerm){ 
   //     return this.tips.filter((tip) => {

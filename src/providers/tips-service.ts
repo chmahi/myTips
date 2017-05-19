@@ -37,7 +37,7 @@ export class TipsService {
   }
 }
 
-  filterItems(searchTerm){ 
+  filterItems(searchTerm, category){ 
       return this.data.filter((tip) => {
           return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
       });  
