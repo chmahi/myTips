@@ -5,6 +5,8 @@ import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
 import { LoadingController } from 'ionic-angular';
+import { ViewChild } from '@angular/core';
+import { Slides } from 'ionic-angular';
 
 /**
  * Generated class for the Postpage page.
@@ -13,15 +15,15 @@ import { LoadingController } from 'ionic-angular';
  * on Ionic pages and navigation.
  */
 @IonicPage()
+
 @Component({
   selector: 'page-postpage-first',
   templateUrl: 'postpageFirst.html',
   providers: [TipsService]
 })
 export class PostpageFirst {
-
-  public tips = [];
-   slides = [1,2,3,4];
+  @ViewChild(Slides) slides: Slides;
+  public tips = [];  
    mySlideOptions = {
    pager:true
   };
@@ -41,7 +43,8 @@ export class PostpageFirst {
     this.navCtrl.push( SearchPage );
   }
    
-   PostListPage(){
+  PostListPage(){
+    this.navCtrl.pop();
     this.navCtrl.push( PostListPage );
   }
   loadTips(){
@@ -54,6 +57,7 @@ export class PostpageFirst {
     .then(data => {
       this.tips = data;  
       loader.dismiss();
+      this.slides.slideTo(2, 50);
     });
     //;
   });

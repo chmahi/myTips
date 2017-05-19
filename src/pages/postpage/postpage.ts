@@ -20,15 +20,16 @@ export class Postpage {
 
   public tips = [];
    slides = [1,2,3,4];
+   postParam;
    mySlideOptions = {
    pager:true
   };
   
-  constructor(public navCtrl: NavController, public tipsService: TipsService ) {
+  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService ) {
     this.loadTips();
     
-    //this.postParam = navParams.get("postValue");
-    // console.log(this.postParam);
+    this.postParam = navParams.get("postValue");
+     console.log(this.postParam);
   }
 
   ionViewDidLoad() {
