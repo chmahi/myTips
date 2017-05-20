@@ -18,8 +18,8 @@ import { LoadingController } from 'ionic-angular';
 })
 export class YogaPage {
   tips;   
-  searchTerm;
-  category;
+  searchTerm = "";
+  category = "Yoga";
   public search = false;
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
