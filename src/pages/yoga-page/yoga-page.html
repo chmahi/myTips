@@ -38,7 +38,7 @@
 </ion-header>
 <ion-content>
 
-<ion-card (click)="PostpageFirst()" *ngFor="let tip of tips">
+<ion-card (click)="PostpageFirst()" *ngFor="let tip of tips | filter:'Yoga'">
   <img src="assets/images/imag1.png"/>
   <ion-card-content class="card-content">
     <ion-card-title class="title">

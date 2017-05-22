@@ -86,7 +86,7 @@ favTip(tipId, userId) {
 
   filterItems(searchTerm, category){ 
       return this.data.filter((tip) => {
-          if(tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1 && tip.category.toLowerCase().indexOf(category.toLowerCase()) > -1){
+          if(tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1){
             return tip;
           }
       });  
