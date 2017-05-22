@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, PipeTransform } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import { Postpage } from '../postpage/postpage';
 import { SearchPage } from '../search-page/search-page';
 import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController } from 'ionic-angular';
+import { Filter } from '../../pipes/filter';
 /**
  * Generated class for the YogaPage page.
  *
@@ -14,7 +15,7 @@ import { LoadingController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-yoga-page',
-  templateUrl: 'yoga-page.html'
+  templateUrl: 'yoga-page.html'  
 })
 export class YogaPage {
   tips;   
