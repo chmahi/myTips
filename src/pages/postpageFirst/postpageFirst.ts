@@ -51,7 +51,7 @@ export class PostpageFirst {
     console.log('ionViewDidLoad PostpageFirst');
   }
   
-   searchPage(){
+  searchPage(){
     this.navCtrl.push( SearchPage );
   }
    
@@ -76,16 +76,25 @@ export class PostpageFirst {
   
 }
 
- likePost(id){
+ likePost(id){   
+   if(!this.deviceId){
+     this.deviceId = "12345";
+   }
     this.tipsService.likeTip(id,this.deviceId)
     .then(data => {
-      console.log(data);       
+             
     });
   }
   favoritePost(id){
-    this.tipsService.favTip(id,this.deviceId);
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }
+    this.tipsService.favTip(id,this.deviceId)
+    .then(data => {
+             
+    });
   }
   playVideo(videoId) {
-  this.youtube.openVideo(videoId);
-}
+    this.youtube.openVideo(videoId);
+  }
 }

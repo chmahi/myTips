@@ -6,6 +6,7 @@ import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
 import { LoadingController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 /**
  * Generated class for the Postpage page.
  *
@@ -23,12 +24,13 @@ export class Postpage {
   public tips = [];
    slides = [1,2,3,4];
    postParam;
+   iconValue = true;
    deviceId;
    mySlideOptions = {
    pager:true
   };
   
-  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService,  public loading: LoadingController, private sharingVar: SocialSharing ) {
+  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService, private youtube: YoutubeVideoPlayer,  public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();
     
     this.postParam = navParams.get("postValue");
@@ -71,11 +73,26 @@ export class Postpage {
   
 }
 
-  likePost(id){
-    this.tipsService.likeTip(id,this.deviceId);
+  likePost(id){   
+   if(!this.deviceId){
+     this.deviceId = "12345";
+   }
+    this.tipsService.likeTip(id,this.deviceId)
+    .then(data => {
+             
+    });
   }
   favoritePost(id){
-    this.tipsService.favTip(id,this.deviceId);
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }
+    this.tipsService.favTip(id,this.deviceId)
+    .then(data => {
+             
+    });
+  }
+  playVideo(videoId) {
+    this.youtube.openVideo(videoId);
   }
   
 }

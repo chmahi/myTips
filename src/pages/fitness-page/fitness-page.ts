@@ -24,7 +24,7 @@ export class FitnessPage {
   public search = false;   
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService,  public loading: LoadingController ) {
   this.loadTips();
-  this.deviceId = tipsService.getDeviceDetails();
+  //this.deviceId = tipsService.getDeviceDetails();
   }
 
   ionViewDidLoad() {
