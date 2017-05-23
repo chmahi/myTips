@@ -22,8 +22,8 @@
     <ion-slide *ngFor="let tip of tips;let i=index">
       <div class="content-md">
       <div class="postBlock scroll-content">
-    <div class="postImg">
-      <img src="{{tip.images[0]}}">
+    <div (click)="playVideo('N-nf4nqdZRA')" class="postImg">
+      <img  src="{{tip.images[0]}}">
     </div>
     <div class="postContent">
       <div class="postHead">       
@@ -31,7 +31,7 @@
           <h4>{{tip.title}} <span class="postDate">05 Apr 17</span></h4>
           <div class="reviews">
             
-              <ion-icon  [ngClass]=" iconValue ? 'ios-happy-outline' : 'happy'" (click)="likePost(tip.id)" class="happyIcon" name="ios-happy-outline"></ion-icon>
+              <ion-icon  [ngClass]=" iconValue ? 'ios-happy-outline' : 'ios-happy'" (click)="likePost(tip.id)" class="happyIcon icon icon-md"></ion-icon>
               <span>{{tip.likes.length}}</span>
           
            

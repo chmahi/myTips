@@ -8,6 +8,7 @@ import { LoadingController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 /**
  * Generated class for the Postpage page.
  *
@@ -27,9 +28,9 @@ export class PostpageFirst {
    mySlideOptions = {
    pager:true
   };
-  iconValue=false;
+  iconValue=true;
   deviceId;
-  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing ) {
+  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing, private youtube: YoutubeVideoPlayer ) {
     this.loadTips();
     this.deviceId = tipsService.getDeviceDetails();
     alert(this.deviceId);
@@ -84,4 +85,7 @@ export class PostpageFirst {
   favoritePost(id){
     this.tipsService.favTip(id,this.deviceId);
   }
+  playVideo(videoId) {
+  this.youtube.openVideo(videoId);
+}
 }
