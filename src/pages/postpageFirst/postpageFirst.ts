@@ -27,6 +27,7 @@ export class PostpageFirst {
    mySlideOptions = {
    pager:true
   };
+  iconValue=false;
   deviceId;
   constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();

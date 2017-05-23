@@ -30,14 +30,14 @@
         <div class="postReview">         
           <h4>{{tip.title}} <span class="postDate">05 Apr 17</span></h4>
           <div class="reviews">
-            <span (click)="likePost(tip.id)">
-              <ion-icon class="happyIcon" name="happy"></ion-icon>
+            
+              <ion-icon  [ngClass]=" iconValue ? 'ios-happy-outline' : 'happy'" (click)="likePost(tip.id)" class="happyIcon" name="ios-happy-outline"></ion-icon>
               <span>{{tip.likes.length}}</span>
-            </span>
-            <span (click)="favoritePost(tip.id)">
-              <ion-icon class="heartIcon" name="heart"></ion-icon>
+          
+           
+              <ion-icon (click)="favoritePost(tip.id)" class="heartIcon" name="heart-outline"></ion-icon>
               <span>{{tip.favourites.length}}</span>
-            </span>
+            
             <!--<button ion-button (click)="otherShare()">Share Other</button>-->
               <ion-icon  class="share" (click)="otherShare(tip)" md="md-share"></ion-icon>
           </div>
