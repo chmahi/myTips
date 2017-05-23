@@ -23,6 +23,7 @@ import { LoadPage } from '../pages/load-page/load-page';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
+import { Filter } from '../pipes/filter';
 // import { SliderPage } from '../pages/slider-page/slider-page';
 
 @NgModule({
@@ -39,6 +40,8 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
     ParallaxHeader,
     PostpageFirst,
     LoadPage,
+    // pipes
+    Filter
     // SliderPage
   ],
   imports: [

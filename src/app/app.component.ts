@@ -1,4 +1,4 @@
-import { Component,  ViewChild  } from '@angular/core';
+import { Component,  ViewChild, Pipe, PipeTransform } from '@angular/core';
 import { FormGroup,FormControl } from '@angular/forms';
 import {Nav, Platform, LoadingController } from 'ionic-angular';
 
