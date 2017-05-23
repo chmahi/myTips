@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-
+import {Device} from '@ionic-native/device';
 /*
   Generated class for the TipsService provider.
 
@@ -11,7 +11,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class TipsService {
   data;
-  constructor(public http: Http) {
+  constructor(public http: Http, private device: Device) {
     console.log('Hello TipsService Provider');
   }
   load() {
@@ -59,6 +59,11 @@ likeTip(tipId, userId) {
   });
   }
 }
+
+getDeviceDetails(){    
+      return this.device.uuid; 
+}
+
 
 favTip(tipId, userId) {
   if (this.data) {

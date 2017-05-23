@@ -35,18 +35,18 @@
       <div class="content-md">
       <div class="postBlock scroll-content">
     <div class="postImg">
-      <img src="assets/images/post.png">
+      <img src="{{tip.images[0]}}">
     </div>
     <div class="postContent">
       <div class="postHead">       
         <div class="postReview">         
           <h4>{{tip.title}} <span class="postDate">05 Apr 17</span></h4>
           <div class="reviews">
-            <ion-icon class="heartIcon" name="heart"></ion-icon>
-            <span>24</span>
             <ion-icon class="happyIcon" name="happy"></ion-icon>
-            <span>24</span>
-             <ion-icon  class="share" (click)="otherShare()" md="md-share"></ion-icon>
+            <span>{{tip.likes.length}}</span>
+            <ion-icon class="heartIcon" name="heart"></ion-icon>
+            <span>{{tip.favourites.length}}</span>
+             <ion-icon  class="share" (click)="otherShare(tip)" md="md-share"></ion-icon>
           </div>
         </div>
 
