@@ -27,20 +27,21 @@ export class PostpageFirst {
    mySlideOptions = {
    pager:true
   };
-  
+  deviceId;
   constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();
-    
+    this.deviceId = tipsService.getDeviceDetails();
+    alert(this.deviceId);
     //this.postParam = navParams.get("postValue");
     // console.log(this.postParam);
   }
-   otherShare(){
-    this.sharingVar.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"http://pointdeveloper.com")
+   otherShare(tip){
+    this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
     .then(()=>{
-        alert("Success");
+        
       },
       ()=>{
-         alert("failed")
+        
       })
  
   }
@@ -71,5 +72,15 @@ export class PostpageFirst {
     //;
   });
   
+}
+
+ likePost(id){
+    this.tipsService.likeTip(id,this.deviceId)
+    .then(data => {
+      console.log(data);       
+    });
+  }
+  favoritePost(id){
+    this.tipsService.favTip(id,this.deviceId);
   }
 }

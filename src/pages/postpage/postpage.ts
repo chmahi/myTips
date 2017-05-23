@@ -22,6 +22,7 @@ export class Postpage {
   public tips = [];
    slides = [1,2,3,4];
    postParam;
+   deviceId;
    mySlideOptions = {
    pager:true
   };
@@ -32,13 +33,13 @@ export class Postpage {
     this.postParam = navParams.get("postValue");
      console.log(this.postParam);
   }
-    otherShare(){
-    this.sharingVar.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"http://pointdeveloper.com")
+    otherShare(tip){
+     this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
     .then(()=>{
-        alert("Success");
+       
       },
       ()=>{
-         alert("failed")
+        
       })
  
   }
@@ -58,6 +59,13 @@ export class Postpage {
       this.tips = data;
   
     });
+  }
+
+  likePost(id){
+    this.tipsService.likeTip(id,this.deviceId);
+  }
+  favoritePost(id){
+    this.tipsService.favTip(id,this.deviceId);
   }
   
 }
