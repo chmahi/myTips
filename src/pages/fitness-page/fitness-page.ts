@@ -20,7 +20,7 @@ export class FitnessPage {
   tips; 
   searchTerm;
   category;
-
+  deviceId;
   public search = false;   
   constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService,  public loading: LoadingController ) {
   this.loadTips();
