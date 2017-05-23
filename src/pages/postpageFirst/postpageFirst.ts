@@ -24,6 +24,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class PostpageFirst {
   @ViewChild(Slides) slides: Slides;
   public tips = [];  
+  abCLick = false;
    mySlideOptions = {
    pager:true
   };
@@ -49,7 +50,7 @@ export class PostpageFirst {
     console.log('ionViewDidLoad PostpageFirst');
   }
   
-   searchPage(){
+  searchPage(){
     this.navCtrl.push( SearchPage );
   }
    
@@ -74,7 +75,10 @@ export class PostpageFirst {
   
 }
 
- likePost(id){
+ likePost(id){   
+   if(!this.deviceId){
+     this.deviceId = "12345";
+   }
     this.tipsService.likeTip(id,this.deviceId)
     .then(data => {
       console.log(data);       
