@@ -42,7 +42,7 @@
   <img src="{{tip.images[0]}}">
   <ion-card-content class="card-content">
     <ion-card-title class="title">
-      <h4>{{tip.title}} <span class="date" >05 Apr 17</span></h4>
+      <h4>{{tip.title}} <span class="date" >{{changeDate(tip.createdAt)}}</span></h4>
     </ion-card-title>
     <p class="para">
     {{tip.description | slice:0:40}}
