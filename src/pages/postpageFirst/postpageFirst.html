@@ -18,7 +18,7 @@
 <ion-content >
 
 
-  <ion-slides>
+  <ion-slides (initialSlide) = "3" >
     <ion-slide *ngFor="let tip of tips;let i=index">
       <div class="content-md">
       <div class="postBlock scroll-content">
@@ -30,9 +30,9 @@
         <div class="postReview">          
           <h4>{{tip.title}} <span class="postDate">05 Apr 17</span></h4>
           <div class="reviews">
-              <ion-icon  [ngClass]=" iconLike(tip.likes).length == 0 ? 'ion-ios-happy-outline' : 'ion-ios-happy'" (click)="likePost(tip.id)" class="happyIcon icon"></ion-icon>
+              <ion-icon  [ngClass]=" iconLike(tip.likes).length == 0 ? 'ion-ios-happy-outline' : 'ion-ios-happy'" (click)="likePost(tip.id, tip.likes)" class="happyIcon icon"></ion-icon>
               <span>{{tip.likes.length}}</span>           
-              <ion-icon [ngClass]=" iconFav(tip.favourites) ? 'ion-ios-heart-outline' : 'ion-ios-heart'" (click)="favoritePost(tip.id)" class="heartIcon icon"></ion-icon>
+              <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-ios-heart-outline' : 'ion-ios-heart'" (click)="favoritePost(tip.id, tip.favourites)" class="heartIcon icon"></ion-icon>
               <span>{{tip.favourites.length}}</span>
             
            <!--<button ion-button (click)="otherShare()">Share Other</button>-->
