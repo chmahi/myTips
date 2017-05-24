@@ -27,7 +27,7 @@ export class FirstPage {
       temp.navCtrl.push( LoadPage );
       temp.navCtrl.push( PostpageFirst );
       clearInterval(id);
-    }, 2000);
+    }, 5000);
     
 }
 
@@ -38,7 +38,8 @@ export class FirstPage {
   }
   
 
-Postpage(){
+postpageFirst(){
+  this.navCtrl.push( LoadPage );
   this.navCtrl.push( PostpageFirst );
 }
 

@@ -33,7 +33,7 @@ export class PostpageFirst {
   constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing, private youtube: YoutubeVideoPlayer ) {
     this.loadTips();
     this.deviceId = tipsService.getDeviceDetails();
-    alert(this.deviceId);
+   
     //this.postParam = navParams.get("postValue");
     // console.log(this.postParam);
   }
