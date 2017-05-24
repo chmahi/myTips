@@ -59,39 +59,65 @@ export class PostpageFirst {
     this.navCtrl.pop();
     this.navCtrl.push( PostListPage );
   }
+
+
+
   loadTips(){
 
     let loader = this.loading.create({
     content: 'Getting latest entries...',
-    });
+  });
+  
   loader.present().then(() => {
      this.tipsService.load()
     .then(data => {
       this.tips = data;  
       loader.dismiss();
-      this.slides.slideTo(2, 50);
+      console.log("this is loading");
+      var id = setInterval(function() {
+         
+        clearInterval(id);
+      }, 3000);
+     
     });
     //;
   });
   
 }
 
- likePost(id){   
+ likePost(id, listlike){   
    if(!this.deviceId){
      this.deviceId = "12345";
    }
     this.tipsService.likeTip(id,this.deviceId)
     .then(data => {
-        
+        if(data['liked'] == true){
+          listlike.push({userId: this.deviceId});
+        }else{         
+          listlike.forEach(element => {
+            if(element.userId == this.deviceId){
+              listlike.splice(listlike.indexOf(element), 1);
+            }
+          });
+        }
     });
   }
-  favoritePost(id){
+
+  favoritePost(id, listfav){
     if(!this.deviceId){
      this.deviceId = "12345";
    }
     this.tipsService.favTip(id,this.deviceId)
     .then(data => {
-        
+        if(data['favourite'] == true){
+          listfav.push({userId: this.deviceId});
+        }else{
+          listfav.forEach(element => {
+            if(element.userId == this.deviceId){
+              listfav.splice(listfav.indexOf(element), 1);
+            }
+          });
+        }
     });
   }
   playVideo(videoId) {

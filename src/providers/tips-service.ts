@@ -38,7 +38,6 @@ export class TipsService {
 }
 
 likeTip(tipId, userId) {
-  console.log(userId);
   // don't have the data yet
   return new Promise(resolve => {
     // We're using Angular HTTP provider to request the data,
@@ -62,10 +61,7 @@ getDeviceDetails(){
 
 
 favTip(tipId, userId) {
-  if (this.data) {
-    // already loaded data
-    return Promise.resolve(this.data);
-  }else{
+  
 
   // don't have the data yet
   return new Promise(resolve => {
@@ -75,7 +71,7 @@ favTip(tipId, userId) {
     if(userId == ''){
       userId = '12345';
     }
-    this.http.post('https://health-tips-backend.herokuapp.com/tips/favourite/'+tipId+'/'+userId,'')
+    this.http.post('https://health-tips-backend.herokuapp.com/tips/favorite/'+tipId+'/'+userId,'')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
@@ -84,7 +80,7 @@ favTip(tipId, userId) {
         resolve(this.data);
       });
   });
-  }
+
 }
 
 
