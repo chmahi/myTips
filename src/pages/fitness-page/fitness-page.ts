@@ -69,7 +69,12 @@ export class FitnessPage {
   
 };
 
-
+changeDate(dateVal){
+    let b = new Date(dateVal);
+    let c = b.toDateString();
+    let d = c.split(' ');
+    return d[1] +" "+ d[2] +" "+ d [3];
+  }
 
 
 

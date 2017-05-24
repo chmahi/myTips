@@ -120,6 +120,7 @@ export class PostpageFirst {
         }
     });
   }
+
   playVideo(videoId) {
     this.youtube.openVideo(videoId);
   }
@@ -135,6 +136,13 @@ export class PostpageFirst {
      this.deviceId = "12345";
    }    
     return tipList.filter(tip => tip.userId == this.deviceId);
+  }
+
+  changeDate(dateVal){
+    let b = new Date(dateVal);
+    let c = b.toDateString();
+    let d = c.split(' ');
+    return d[1] +" "+ d[2] +" "+ d [3];
   }
 
 }
