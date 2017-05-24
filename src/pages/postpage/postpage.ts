@@ -73,41 +73,47 @@ export class Postpage {
   
 }
 
- likePost(id, listlike){   
+ likePost(id, listlike,numVal){   
    if(!this.deviceId){
      this.deviceId = "12345";
    }
+   if(numVal == 1){
+      listlike.forEach(element => {
+        if(element.userId == this.deviceId){
+          listlike.splice(listlike.indexOf(element), 1);
+        }
+      });
+    }else{
+       listlike.push({userId: this.deviceId});
+    }
     this.tipsService.likeTip(id,this.deviceId)
     .then(data => {
-        if(data['liked'] == true){
-          listlike.push({userId: this.deviceId});
-        }else{         
-          listlike.forEach(element => {
-            if(element.userId == this.deviceId){
-              listlike.splice(listlike.indexOf(element), 1);
-            }
-          });
-        }
+        
     });
   }
-  
-  favoritePost(id, listfav){
+
+  favoritePost(id, listfav, numVal){
     if(!this.deviceId){
      this.deviceId = "12345";
    }
+
+    if(numVal == 1){
+      listfav.forEach(element => {
+        if(element.userId == this.deviceId){
+          listfav.splice(listfav.indexOf(element), 1);
+        }
+      });
+    }else{
+       listfav.push({userId: this.deviceId});
+    }
+
+        
     this.tipsService.favTip(id,this.deviceId)
     .then(data => {
-        if(data['favourite'] == true){
-          listfav.push({userId: this.deviceId});
-        }else{
-          listfav.forEach(element => {
-            if(element.userId == this.deviceId){
-              listfav.splice(listfav.indexOf(element), 1);
-            }
-          });
-        }
+        
     });
   }
+
   playVideo(videoId) {
     this.youtube.openVideo(videoId);
   }
@@ -124,6 +130,12 @@ export class Postpage {
    }    
     return tipList.filter(tip => tip.userId == this.deviceId);
   }
-
+  
+  changeDate(dateVal){
+    let b = new Date(dateVal);
+    let c = b.toDateString();
+    let d = c.split(' ');
+    return d[1] +" "+ d[2] +" "+ d [3];
+  }
   
 }

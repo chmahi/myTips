@@ -40,14 +40,24 @@
     <div class="postContent">
       <div class="postHead">       
         <div class="postReview">         
-          <h4>{{tip.title}} <span class="postDate">05 Apr 17</span></h4>
+          <h4>{{tip.title}} <span class="postDate">{{changeDate(tip.createdAt)}}</span></h4>
           <div class="reviews">
-            <ion-icon  [ngClass]=" iconLike(tip.likes).length == 0 ? 'ion-ios-happy-outline' : 'ion-ios-happy'" (click)="likePost(tip.id, tip.likes)" class="happyIcon icon"></ion-icon>
-              <span>{{tip.likes.length}}</span>           
-              <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-ios-heart-outline' : 'ion-ios-heart'" (click)="favoritePost(tip.id, tip.favourites)" class="heartIcon icon"></ion-icon>
+            <ion-grid>
+              <ion-row>
+            <ion-col col-3 (click)="likePost(tip.id, tip.likes, iconLike(tip.likes).length)">
+              <ion-icon  [ngClass]=" iconLike(tip.likes).length == 0 ? 'ion-ios-happy-outline' : 'ion-ios-happy'"  class="happyIcon icon"></ion-icon>
+              <span>{{tip.likes.length}}</span> 
+            </ion-col>
+            <ion-col col-3 (click)="favoritePost(tip.id, tip.favourites, iconFav(tip.favourites).length)">            
+              <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-ios-heart-outline' : 'ion-ios-heart'"  class="heartIcon icon"></ion-icon>
               <span>{{tip.favourites.length}}</span>
-            
-             <ion-icon  class="share" (click)="otherShare(tip)" md="md-share"></ion-icon>
+            </ion-col>
+           <!--<button ion-button (click)="otherShare()">Share Other</button>-->
+           <ion-col col-3 (click)="otherShare(tip)">
+              <ion-icon  class="share" md="md-share"></ion-icon>
+          </ion-col>
+          </ion-row>
+         </ion-grid>
           </div>
         </div>
 
