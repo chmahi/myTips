@@ -82,7 +82,7 @@ export class PostpageFirst {
    }
     this.tipsService.likeTip(id,this.deviceId)
     .then(data => {
-             
+        
     });
   }
   favoritePost(id){
@@ -91,10 +91,24 @@ export class PostpageFirst {
    }
     this.tipsService.favTip(id,this.deviceId)
     .then(data => {
-             
+        
     });
   }
   playVideo(videoId) {
     this.youtube.openVideo(videoId);
   }
+  
+  iconLike(tipList): any{
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }    
+    return tipList.filter(tip => tip.userId == this.deviceId);
+  }
+  iconFav(tipList): any{
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }    
+    return tipList.filter(tip => tip.userId == this.deviceId);
+  }
+
 }

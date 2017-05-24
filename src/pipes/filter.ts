@@ -13,6 +13,7 @@ export class Filter implements PipeTransform {
  transform(value: any, args: string[]): any {
    console.log(value +"/"+ args[0]);
   let filter = args[0];
+
     if (filter && Array.isArray(value)) {
       let filterKeys = Object.keys(filter);
       return value.filter(item =>
