@@ -15,7 +15,7 @@ import { Filter } from '../../pipes/filter';
 @IonicPage()
 @Component({
   selector: 'page-yoga-page',
-  templateUrl: 'yoga-page.html'  
+  templateUrl: 'yoga-page.html'
 })
 export class YogaPage {
   tips;   

@@ -10,9 +10,9 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filter',
 })
 export class Filter implements PipeTransform {
- transform(value, args: string[]): any {
-   console.log(value +'/'+ args );
-    let filter = args;
+ transform(value: any, args: string[]): any {
+   console.log(value +"/"+ args[0]);
+  let filter = args[0];
 
     if (filter && Array.isArray(value)) {
       let filterKeys = Object.keys(filter);

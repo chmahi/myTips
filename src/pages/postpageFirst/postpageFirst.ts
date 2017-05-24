@@ -8,6 +8,7 @@ import { LoadingController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 /**
  * Generated class for the Postpage page.
  *
@@ -27,20 +28,22 @@ export class PostpageFirst {
    mySlideOptions = {
    pager:true
   };
-  
-  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing ) {
+  iconValue=true;
+  deviceId;
+  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing, private youtube: YoutubeVideoPlayer ) {
     this.loadTips();
-    
+    this.deviceId = tipsService.getDeviceDetails();
+    alert(this.deviceId);
     //this.postParam = navParams.get("postValue");
     // console.log(this.postParam);
   }
-   otherShare(){
-    this.sharingVar.share("Genral Share Sheet",null/*Subject*/,null/*File*/,"http://pointdeveloper.com")
+   otherShare(tip){
+    this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
     .then(()=>{
-        alert("Success");
+        
       },
       ()=>{
-         alert("failed")
+        
       })
  
   }
@@ -48,7 +51,7 @@ export class PostpageFirst {
     console.log('ionViewDidLoad PostpageFirst');
   }
   
-   searchPage(){
+  searchPage(){
     this.navCtrl.push( SearchPage );
   }
    
@@ -71,5 +74,41 @@ export class PostpageFirst {
     //;
   });
   
+}
+
+ likePost(id){   
+   if(!this.deviceId){
+     this.deviceId = "12345";
+   }
+    this.tipsService.likeTip(id,this.deviceId)
+    .then(data => {
+        
+    });
   }
+  favoritePost(id){
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }
+    this.tipsService.favTip(id,this.deviceId)
+    .then(data => {
+        
+    });
+  }
+  playVideo(videoId) {
+    this.youtube.openVideo(videoId);
+  }
+  
+  iconLike(tipList): any{
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }    
+    return tipList.filter(tip => tip.userId == this.deviceId);
+  }
+  iconFav(tipList): any{
+    if(!this.deviceId){
+     this.deviceId = "12345";
+   }    
+    return tipList.filter(tip => tip.userId == this.deviceId);
+  }
+
 }
