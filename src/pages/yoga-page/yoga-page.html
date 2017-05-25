@@ -39,7 +39,7 @@
 <ion-content>
 
 <ion-card (click)="PostpageFirst()" *ngFor="let tip of tips | filter:[{category:'Yoga'}]">
-  <img src="{{tip.images[0]}}">
+  <img src="{{changeImage(tip.images)}}">
   <ion-card-content class="card-content">
     <ion-card-title class="title">
       <h4>{{tip.title}} <span class="date" >{{changeDate(tip.createdAt)}}</span></h4>

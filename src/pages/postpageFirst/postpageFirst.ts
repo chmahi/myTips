@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
@@ -50,10 +49,7 @@ export class PostpageFirst {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostpageFirst');
   }
-  
-  searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
+
    
   PostListPage(){
     this.navCtrl.pop();

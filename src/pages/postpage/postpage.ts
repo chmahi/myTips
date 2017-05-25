@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
@@ -49,10 +48,7 @@ export class Postpage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Postpage');
   }
-   searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
-   
+  
    PostListPage(){
     this.navCtrl.push( PostListPage );
   }
@@ -138,4 +134,12 @@ export class Postpage {
     return d[1] +" "+ d[2] +" "+ d [3];
   }
   
+ changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
+  }
 }

@@ -15,10 +15,8 @@ import { PostListPage} from '../pages/post-list-page/post-list-page';
 import { BeautyPage } from '../pages/beauty-page/beauty-page';
 import {  YogaPage } from '../pages/yoga-page/yoga-page';
 import { FitnessPage } from '../pages/fitness-page/fitness-page';
-
 import { Postpage} from '../pages/postpage/postpage';
 import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
-import { SearchPage } from '../pages/search-page/search-page';
 import { TipsService } from '../providers/tips-service';
 import { LoadPage } from '../pages/load-page/load-page';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -38,7 +36,6 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage,
     ParallaxHeader,
     PostpageFirst,
     LoadPage,
@@ -61,7 +58,6 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
     YogaPage,
     FitnessPage,
     Postpage,
-    SearchPage,
     PostpageFirst,
     LoadPage,
     // SliderPage
