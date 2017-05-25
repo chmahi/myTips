@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { Postpage } from '../postpage/postpage';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController } from 'ionic-angular';
@@ -30,9 +29,7 @@ export class FitnessPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad FitnessPage');
   }
-   searchPage(){
-    this.navCtrl.push( SearchPage );
-  };
+ 
   showSearch(){
      this.search = true;
   }
@@ -76,7 +73,14 @@ changeDate(dateVal){
     return d[1] +" "+ d[2] +" "+ d [3];
   }
 
-
+ changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
+  }
 
 
 }
