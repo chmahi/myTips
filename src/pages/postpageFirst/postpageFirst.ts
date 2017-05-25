@@ -150,4 +150,13 @@ export class PostpageFirst {
     return d[1] +" "+ d[2] +" "+ d [3];
   }
 
+  changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
+  }
+
 }
