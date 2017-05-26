@@ -22,7 +22,7 @@ export class Postpage {
 
   public tips = [];
    slides = [1,2,3,4];
-   postParam;
+   tip;
    iconValue = true;
    deviceId;
    mySlideOptions = {
@@ -32,8 +32,8 @@ export class Postpage {
   constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService, private youtube: YoutubeVideoPlayer,  public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();
     
-    this.postParam = navParams.get("postValue");
-     console.log(this.postParam);
+    this.tip = navParams.get("postValue");
+     console.log(this.tip);
   }
     otherShare(tip){
      this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")

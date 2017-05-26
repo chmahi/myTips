@@ -22,7 +22,8 @@
     <ion-slide *ngFor="let tip of tips;let i=index">
       <div class="content-md">
       <div class="postBlock scroll-content">
-    <div (click)="playVideo('N-nf4nqdZRA')" class="postImg">
+    <div (click)="playVideo(tip.videos)" class="postImg">
+      <span [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'">Has video</span>
       <img  src="{{changeImage(tip.images)}}">
     </div>
     <div class="postContent">

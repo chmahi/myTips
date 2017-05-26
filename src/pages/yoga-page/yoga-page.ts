@@ -84,7 +84,7 @@ export class YogaPage {
   {
     if (image.length == 0){
       return "assets/images/noImage.png";
-    } else{
+    } else {
       return image[0];
     }
   }
