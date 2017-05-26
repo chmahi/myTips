@@ -22,8 +22,8 @@
     <ion-slide *ngFor="let tip of tips;let i=index">
       <div class="content-md">
       <div class="postBlock scroll-content">
-    <div (click)="playVideo(tip.videos)" class="postImg">
-      <span [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'">Has video</span>
+    <div  class="postImg">
+      <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img (click)="playVideo(tip.videos)" src="assets/images/play-btn.png"></span>
       <img  src="{{changeImage(tip.images)}}">
     </div>
     <div class="postContent">
@@ -38,7 +38,7 @@
               <span>{{tip.likes.length}}</span> 
             </ion-col>
             <ion-col col-3 (click)="favoritePost(tip.id, tip.favourites, iconFav(tip.favourites).length)">            
-              <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-ios-heart-outline' : 'ion-ios-heart'"  class="heartIcon icon"></ion-icon>
+              <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-md-heart-outline' : 'ion-md-heart'"  class="heartIcon icon"></ion-icon>
               <span>{{tip.favourites.length}}</span>
             </ion-col>
            <!--<button ion-button (click)="otherShare()">Share Other</button>-->
