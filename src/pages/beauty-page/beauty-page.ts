@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { Postpage } from '../postpage/postpage';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController } from 'ionic-angular';
@@ -29,9 +28,7 @@ export class BeautyPage {
     console.log('ionViewDidLoad BeautyPage');
   }
 
-   searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
+  
   showSearch(){
      this.search = true;
   }
@@ -70,5 +67,14 @@ export class BeautyPage {
     let c = b.toDateString();
     let d = c.split(' ');
     return d[1] +" "+ d[2] +" "+ d [3];
+  }
+
+   changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
   }
 }

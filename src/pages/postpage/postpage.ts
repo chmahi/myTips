@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
@@ -23,7 +22,7 @@ export class Postpage {
 
   public tips = [];
    slides = [1,2,3,4];
-   postParam;
+   tip;
    iconValue = true;
    deviceId;
    mySlideOptions = {
@@ -33,8 +32,8 @@ export class Postpage {
   constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService, private youtube: YoutubeVideoPlayer,  public loading: LoadingController, private sharingVar: SocialSharing ) {
     this.loadTips();
     
-    this.postParam = navParams.get("postValue");
-     console.log(this.postParam);
+    this.tip = navParams.get("postValue");
+     console.log(this.tip);
   }
     otherShare(tip){
      this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
@@ -49,10 +48,7 @@ export class Postpage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad Postpage');
   }
-   searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
-   
+  
    PostListPage(){
     this.navCtrl.push( PostListPage );
   }
@@ -138,4 +134,12 @@ export class Postpage {
     return d[1] +" "+ d[2] +" "+ d [3];
   }
   
+ changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
+  }
 }

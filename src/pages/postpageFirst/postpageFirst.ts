@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { SearchPage } from '../search-page/search-page';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
@@ -50,10 +49,7 @@ export class PostpageFirst {
   ionViewDidLoad() {
     console.log('ionViewDidLoad PostpageFirst');
   }
-  
-  searchPage(){
-    this.navCtrl.push( SearchPage );
-  }
+
    
   PostListPage(){
     this.navCtrl.pop();
@@ -127,7 +123,9 @@ export class PostpageFirst {
   }
 
   playVideo(videoId) {
-    this.youtube.openVideo(videoId);
+    if(videoId.length != 0){
+      this.youtube.openVideo(videoId[0]);
+    }
   }
   
   iconLike(tipList): any{
@@ -148,6 +146,15 @@ export class PostpageFirst {
     let c = b.toDateString();
     let d = c.split(' ');
     return d[1] +" "+ d[2] +" "+ d [3];
+  }
+
+  changeImage(image)
+  {
+    if (image.length == 0){
+      return "assets/images/noImage.png";
+    } else{
+      return image[0];
+    }
   }
 
 }
