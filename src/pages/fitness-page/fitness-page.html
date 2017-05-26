@@ -33,7 +33,7 @@
    <ion-grid>
     <ion-row>
     <ion-col col-3>
-       <ion-icon menuToggle md="md-menu"></ion-icon>
+       <ion-icon name="ios-arrow-back"></ion-icon>
     </ion-col>
     <ion-col class="heading" col-6>
       <img class="headLogo" src="assets/images/logo-small.png">
@@ -55,8 +55,8 @@
 </ion-header>
 <ion-content>
 <ion-card (click)="callPost(tip)" *ngFor="let tip of tips | filter:[{category:'Fitness'}]">
-  <div>
-    <span [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'">Has video</span>
+  <div class="postImg">
+     <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img src="assets/images/play-btn.png"></span>
     <img src="{{changeImage(tip.images)}}">
   </div>
   <ion-card-content class="card-content">
@@ -72,7 +72,7 @@
     <div class="reviews">
             <ion-icon class="happyIcon icon ion-ios-happy"></ion-icon>
             <span>{{tip.likes.length}}</span>
-            <ion-icon class="heartIcon icon ion-ios-heart"></ion-icon>
+            <ion-icon class="heartIcon icon ion-md-heart"></ion-icon>
             <span>{{tip.favourites.length}}</span>
           </div>
       </ion-row>

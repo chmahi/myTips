@@ -207,3 +207,21 @@ margin-top: 3px;
     }
    
  }
+
+ 
+        .postImg{
+            position: relative;
+        .video{
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            margin-top: -35px;
+            top: 50%;
+            width: 70px;
+            height: 70px;
+          img{
+            width:100%;
+            height: auto;
+          }
+        }
+      }
