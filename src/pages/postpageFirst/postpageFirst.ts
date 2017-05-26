@@ -123,12 +123,12 @@ export class PostpageFirst {
   }
 
   playVideo(videoId) {
-    console.log(videoId.length);
+    alert(videoId + 'mytips');
     
     // if(videoId.length != 0){
       this.youtube.openVideo(videoId[0]);
     // }
-  
+   
   }
   
   iconLike(tipList): any{
