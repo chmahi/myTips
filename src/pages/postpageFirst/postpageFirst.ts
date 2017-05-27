@@ -123,10 +123,10 @@ export class PostpageFirst {
   }
 
   playVideo(videoId) {
-    alert(videoId + 'mytips');
+    alert(videoId + ' mytips ');
     
     // if(videoId.length != 0){
-      this.youtube.openVideo(videoId[0]);
+      this.youtube.openVideo(videoId);
     // }
    
   }
