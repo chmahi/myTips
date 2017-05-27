@@ -29,7 +29,10 @@ export class PostpageFirst {
   };
   iconValue=true;
   deviceId;
-  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, private sharingVar: SocialSharing, private youtube: YoutubeVideoPlayer ) {
+  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, 
+  private sharingVar: SocialSharing,
+    private youtube: YoutubeVideoPlayer
+    ) {
     this.loadTips();
     this.deviceId = tipsService.getDeviceDetails();
    
@@ -37,12 +40,13 @@ export class PostpageFirst {
     // console.log(this.postParam);
   }
    otherShare(tip){
+     
     this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
     .then(()=>{
-        
+       
       },
       ()=>{
-        
+       
       })
  
   }
@@ -122,13 +126,9 @@ export class PostpageFirst {
     });
   }
 
-  playVideo(videoId) {
-    alert(videoId + 'mytips');
-    
-    // if(videoId.length != 0){
-      this.youtube.openVideo(videoId[0]);
-    // }
-   
+  playVideo(videoId) {   
+  //  alert("She works");
+     this.youtube.openVideo('N-nf4nqdZRA');  
   }
   
   iconLike(tipList): any{
