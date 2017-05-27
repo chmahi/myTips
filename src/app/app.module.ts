@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Device } from '@ionic-native/device';
+ import { Device } from '@ionic-native/device';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
@@ -23,7 +23,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
 import { Filter } from '../pipes/filter';
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 // import { SliderPage } from '../pages/slider-page/slider-page';
 
 @NgModule({
