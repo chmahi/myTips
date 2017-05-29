@@ -126,9 +126,15 @@ export class PostpageFirst {
     });
   }
 
-  playVideo(videoId) {   
-  //  alert("She works");
-     this.youtube.openVideo('N-nf4nqdZRA');  
+
+  playVideo(videoId) {
+    alert(videoId + ' mytips ');
+    
+    // if(videoId.length != 0){
+      this.youtube.openVideo(videoId);
+    // }
+   
+
   }
   
   iconLike(tipList): any{

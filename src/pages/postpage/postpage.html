@@ -33,7 +33,7 @@
 
       <div class="content-md">
       <div class="postBlock scroll-content">
-     <div (click)="playVideo(tip.videos)" class="postImg">
+     <div (click)="playVideo(tip.videos[0])" class="postImg">
         <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img src="assets/images/play-btn.png"></span>
      <img src="{{changeImage(tip.images)}}">
     </div>
