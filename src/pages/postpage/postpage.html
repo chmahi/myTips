@@ -35,7 +35,7 @@
       <div class="postBlock scroll-content">
      <div (click)="playVideo(tip.videos[0])" class="postImg">
         <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img src="assets/images/play-btn.png"></span>
-     <img src="{{changeImage(tip.images)}}">
+     <img style="width:100%" src="{{changeImage(tip.images)}}">
     </div>
     <div class="postContent">
       <div class="postHead">       
@@ -66,7 +66,7 @@
         <div class="clear"></div>
       </div>
       <div class="postField">
-        <p>{{tip.description}}</p>
+        <div class="contentCSS" [innerHTML]="tip.description"></div>
       </div>
     </div>
   </div>
