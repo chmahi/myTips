@@ -32,6 +32,9 @@ export class BeautyPage {
   showSearch(){
      this.search = true;
   }
+  renderContent(textVal){
+    return textVal.slice(0,80)+"...";
+  }
  hideSearch(){
      this.search = false;
      this.searchTerm = "";

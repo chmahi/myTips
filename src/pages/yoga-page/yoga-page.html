@@ -16,7 +16,7 @@
    <ion-grid>
     <ion-row>
     <ion-col col-3>
-     <ion-icon  name="ios-arrow-back"></ion-icon>
+     <!--<ion-icon  name="ios-arrow-back"></ion-icon>-->
     </ion-col>
     <ion-col class="heading" col-6 >
        <img class="headLogo" src="assets/images/logo-small.png">
@@ -47,9 +47,7 @@
     <ion-card-title class="title">
       <h4>{{tip.title}} <span class="date" >{{changeDate(tip.createdAt)}}</span></h4>
     </ion-card-title>
-    <p class="para">
-    {{tip.description | slice:0:40}}
-    </p>
+   <div class="para" [innerHTML]="renderContent(tip.description)"></div>
     <ion-grid class="icons">
       <ion-row>
       <div class="reviews">

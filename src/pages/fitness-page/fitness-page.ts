@@ -25,7 +25,9 @@ export class FitnessPage {
   this.loadTips();
   //this.deviceId = tipsService.getDeviceDetails();
   }
-
+  renderContent(textVal){
+    return textVal.slice(0,80)+"...";
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad FitnessPage');
   }
