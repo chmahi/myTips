@@ -15,6 +15,7 @@
         "is_top_level": true,
         "variables": {}
     },
+
     "cordova-plugin-console": {
         "source": {
             "type": "registry",
@@ -23,6 +24,7 @@
         "is_top_level": true,
         "variables": {}
     },
+
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
@@ -61,6 +63,24 @@
             "id": "es6-promise-plugin"
         },
         "is_top_level": false,
+        "variables": {}
+
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console@1.0.5"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/JonSmart/CordovaYoutubeVideoPlayer",
+            "subdir": "."
+        },
+        "is_top_level": true,
         "variables": {}
     }
 }
