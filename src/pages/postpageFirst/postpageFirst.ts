@@ -127,9 +127,7 @@ export class PostpageFirst {
   }
 
 
-  playVideo(videoId) {
-    alert(videoId + ' mytips ');
-    
+  playVideo(videoId) {    
     // if(videoId.length != 0){
       this.youtube.openVideo(videoId);
     // }

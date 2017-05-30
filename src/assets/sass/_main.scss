@@ -209,8 +209,8 @@ margin-top: 3px;
  }
 
  
-        .postImg{
-            position: relative;
+.postImg{
+     position: relative;
         .video{
             position: absolute;
             left: 50%;
@@ -224,4 +224,17 @@ margin-top: 3px;
             height: auto;
           }
         }
+      }
+
+
+
+
+      .contentCSS{
+          img{
+              width: 100%;
+              height: auto;
+          }
+          li{
+              font-size: 0.8em !important;
+          }
       }
