@@ -18,6 +18,7 @@
     "@angular/http": "4.0.0",
     "@angular/platform-browser": "4.0.0",
     "@angular/platform-browser-dynamic": "4.0.0",
+    "@ionic-native/admob": "^3.10.3",
     "@ionic-native/core": "^3.10.3",
     "@ionic-native/device": "^3.10.3",
     "@ionic-native/social-sharing": "^3.10.3",
