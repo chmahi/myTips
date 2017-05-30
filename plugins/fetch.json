@@ -15,7 +15,6 @@
         "is_top_level": true,
         "variables": {}
     },
-
     "cordova-plugin-console": {
         "source": {
             "type": "registry",
@@ -24,7 +23,6 @@
         "is_top_level": true,
         "variables": {}
     },
-
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
@@ -64,15 +62,6 @@
         },
         "is_top_level": false,
         "variables": {}
-
-    },
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console@1.0.5"
-        },
-        "is_top_level": true,
-        "variables": {}
     },
     "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
         "source": {
@@ -81,6 +70,22 @@
             "subdir": "."
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-admobpro": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-admobpro"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-extension": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-extension"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
