@@ -111,7 +111,7 @@ export class Postpage {
   }
 
   playVideo(videoId) {
-    this.youtube.openVideo(videoId);
+    this.youtube.openVideo(videoId[0]);
   }
   
   iconLike(tipList): any{

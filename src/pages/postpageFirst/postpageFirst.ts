@@ -123,7 +123,7 @@ export class PostpageFirst {
   }
 
   playVideo(videoId) {
-    console.log(videoId.length);
+    console.log(videoId[0]);
     
     // if(videoId.length != 0){
       this.youtube.openVideo(videoId[0]);
