@@ -22,8 +22,9 @@
     <ion-slide *ngFor="let tip of tips;let i=index">
       <div class="content-md">
       <div class="postBlock scroll-content">
-    <div  class="postImg">
-      <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img (click)="playVideo(tip.videos)" src="assets/images/play-btn.png"></span>
+
+    <div  class="postImg"  (click)="playVideo('zdgIPpwKsIQ')">
+      <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img src="assets/images/play-btn.png"></span>
       <img  src="{{changeImage(tip.images)}}">
     </div>
     <div class="postContent">
@@ -53,8 +54,8 @@
         
         <div class="clear"></div>
       </div>
-      <div class="postField">
-        <p>{{tip.description}}</p>
+      <div class="postField" >
+        <div class="contentCSS" [innerHTML]="tip.description"></div>
       </div>
     </div>
   </div>

@@ -20,10 +20,10 @@ import { LoadPage } from '../load-page/load-page';
 
 
 export class FirstPage {
-   
+   id;  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
      var temp = this;
-     var id = setInterval(function() {
+      var id = setInterval(function() {
       temp.navCtrl.push( LoadPage );
       temp.navCtrl.push( PostpageFirst );
       clearInterval(id);
@@ -39,6 +39,7 @@ export class FirstPage {
   
 
 postpageFirst(){
+ // clearInterval(this.id);
   this.navCtrl.push( LoadPage );
   this.navCtrl.push( PostpageFirst );
 }

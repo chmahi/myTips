@@ -29,9 +29,13 @@ export class Postpage {
    pager:true
   };
   
-  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService, private youtube: YoutubeVideoPlayer,  public loading: LoadingController, private sharingVar: SocialSharing ) {
+  constructor(public navCtrl: NavController,  public navParams: NavParams, public tipsService: TipsService,
+   private youtube: YoutubeVideoPlayer, 
+    public loading: LoadingController, 
+    private sharingVar: SocialSharing 
+    ) {
     this.loadTips();
-    
+    this.deviceId = tipsService.getDeviceDetails();
     this.tip = navParams.get("postValue");
      console.log(this.tip);
   }

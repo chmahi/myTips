@@ -11,7 +11,7 @@ import {Device} from '@ionic-native/device';
 @Injectable()
 export class TipsService {
   data;
-  constructor(public http: Http, private device: Device) {
+  constructor(public http: Http,  private device: Device) {
     console.log('Hello TipsService Provider');
   }
   load() {
@@ -38,8 +38,10 @@ export class TipsService {
 }
 
 likeTip(tipId, userId) {
+ 
   // don't have the data yet
   return new Promise(resolve => {
+  
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
@@ -56,21 +58,20 @@ likeTip(tipId, userId) {
 }
 
 getDeviceDetails(){    
-      return this.device.uuid; 
+//  alert(this.device.uuid);
+  return this.device.uuid; 
 }
 
 
 favTip(tipId, userId) {
-  
-
+ 
+ 
   // don't have the data yet
   return new Promise(resolve => {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    if(userId == ''){
-      userId = '12345';
-    }
+   
     this.http.post('https://health-tips-backend.herokuapp.com/tips/favorite/'+tipId+'/'+userId,'')
       .map(res => res.json())
       .subscribe(data => {

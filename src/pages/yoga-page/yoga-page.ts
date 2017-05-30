@@ -37,7 +37,12 @@ export class YogaPage {
       postValue:value
     });
   }
-   
+  
+
+  renderContent(textVal){
+    return textVal.slice(0,80)+"...";
+  }
+
   showSearch(){
      this.search = true;
   }

@@ -33,7 +33,7 @@
    <ion-grid>
     <ion-row>
     <ion-col col-3>
-       <ion-icon name="ios-arrow-back"></ion-icon>
+       <!--<ion-icon name="ios-arrow-back"></ion-icon>-->
     </ion-col>
     <ion-col class="heading" col-6>
       <img class="headLogo" src="assets/images/logo-small.png">
@@ -63,16 +63,13 @@
     <ion-card-title class="title">
       <h4>{{tip.title}} <span class="date">{{changeDate(tip.createdAt)}}</span></h4>
     </ion-card-title>
-    <p class="para">
-    {{tip.description | slice:0:40}}
-
-    </p>
+    <div class="para" [innerHTML]="renderContent(tip.description)"></div>
     <ion-grid class="icons">
       <ion-row>
     <div class="reviews">
-            <ion-icon class="happyIcon icon ion-ios-happy"></ion-icon>
+            <ion-icon class="happyIcon icon ion-ios-happy-outline"></ion-icon>
             <span>{{tip.likes.length}}</span>
-            <ion-icon class="heartIcon icon ion-md-heart"></ion-icon>
+            <ion-icon class="heartIcon icon ion-md-heart-outline"></ion-icon>
             <span>{{tip.favourites.length}}</span>
           </div>
       </ion-row>
