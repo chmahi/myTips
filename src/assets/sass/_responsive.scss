@@ -16,26 +16,32 @@
             top: -10px
         }
     
-    .tabs-md .tab-button[aria-selected="true"]{
-        &:after{
-            content: '';
-            position: absolute;
-            display:block;
-            height: 4px;
-            background-color:$color-green;
-            bottom: 0px;
-            left:0px;
-            right:0px;
-        }
-    }
+         .toolbar-title-md{
+
+        line-height: 60px;
+    
+    } 
 
      .tabs-md .tab-button{
     
-        min-height: 42px;
+        min-height: 50px;
+       
     } 
+    .tabs-md .tab-button-text{
+         font-size: 16px;
+    }
     .grid{
       
         padding: 4px;
+    }
+    .headLogo{
+         margin-top: 10px;
+    }
+     .searchbar-md{
+        padding: 9px !important;
+    }
+     .searchbar-md .searchbar-input{
+        height: 47px;
     }
 }
 

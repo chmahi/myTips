@@ -5,7 +5,7 @@ import {Nav, Platform, LoadingController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FirstPage  } from '../pages/first-page/first-page';
-
+import { AdMob } from '@ionic-native/admob'
 
 @Component({
   templateUrl: 'app.html'
@@ -20,13 +20,24 @@ export class MyApp {
 
    pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, public AdMob: AdMob) {
     this.initializeApp();
     this.gform = new FormGroup({
     "gender": new FormControl({value: 'male', disabled: false})
 });
     // used for an example of ngFor and navigation
-  
+  platform.ready().then(() => {
+     let options = {
+        adId: 'ca-app-pub-5732334124058455/7973166445',
+        isTesting: false
+      };
+ 
+      // AdMob.createBanner(options).then(() => {
+      //   AdMob.showBanner(8);
+      // });
+  })
+
+
   }
     doSubmit(event) {
     console.log('Submitting form', this.gform.value);
@@ -40,4 +51,8 @@ export class MyApp {
       this.splashScreen.hide();
     });
   }
+
+ 
+
+
 }
