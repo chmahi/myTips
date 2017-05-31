@@ -25,9 +25,6 @@
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.myapp583716"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.myapp583716"
-        },
         "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
             "PACKAGE_NAME": "com.ionicframework.myapp583716"
         },
