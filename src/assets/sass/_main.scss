@@ -118,7 +118,7 @@ body ion-app.md{
     .toolbar-title-md{
         color:$color-white;
         font-size: 19px;
-        line-height: 28px;
+        line-height: 44px;
         font-family: 'Ropa Sans', sans-serif;
     } 
     .toolbar-background-md {
@@ -138,22 +138,25 @@ body ion-app.md{
     padding: 0px;
     }
     .searchbar-md .searchbar-search-icon{
-        left: 19px;
-        top: 6px;
+        margin-left: -6px;
+        margin-top: -11px;
+        top: 50%;
     }
     .searchbar-md .searchbar-input{
-        height: 30px;
+        height: 35px;
     }
-    
+    .searchbar-md{
+        padding: 10px;
+    }
     ion-header{
         ion-icon{
         
-margin-top: 3px;
+        margin-top: 3px;
         }
     }
     
     .headLogo{
-        
+            margin-top: 6px;
             width: 70px;
     }
     .heading{
@@ -165,8 +168,9 @@ margin-top: 3px;
     .closeButton{
         color: #000;
         position: absolute;
-        right: 19px;
-        top: 19px;
+        right: 20px;
+        top:50%;
+        margin-top: -9px;
         font-size: 18px;
     }
     .spinner-container {
@@ -227,14 +231,8 @@ margin-top: 3px;
       }
 
 
+ion-header ion-icon {
+  margin-top: 6px;
+}
 
-
-      .contentCSS{
-          img{
-              width: 100%;
-              height: auto;
-          }
-          li{
-              font-size: 0.8em !important;
-          }
-      }
+     

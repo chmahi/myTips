@@ -24,6 +24,7 @@ import { ParallaxHeader } from '../components/parallax-header/parallax-header';
 
 import { Filter } from '../pipes/filter';
  import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
+ import { AdMob } from '@ionic-native/admob'
 // import { SliderPage } from '../pages/slider-page/slider-page';
 
 @NgModule({
@@ -69,6 +70,7 @@ import { Filter } from '../pipes/filter';
     SocialSharing, 
     Device,
     YoutubeVideoPlayer,
+    AdMob,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

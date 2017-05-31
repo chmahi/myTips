@@ -15,14 +15,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console@1.0.5"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-statusbar": {
         "source": {
             "type": "registry",
@@ -62,14 +54,35 @@
         },
         "is_top_level": false,
         "variables": {}
+
     },
     "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
         "source": {
             "type": "git",
-            "url": "https://github.com/Glitchbone/CordovaYoutubeVideoPlayer.git",
+            "url": "https://github.com/JonSmart/CordovaYoutubeVideoPlayer",
             "subdir": "."
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-admobpro": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-admobpro"
+<<<<<<< HEAD
+
+=======
+>>>>>>> f3b135bfe46acfce50992ca51749f03f169bab6d
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-extension": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-extension"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
