@@ -148,12 +148,12 @@ body ion-app.md{
     ion-header{
         ion-icon{
         
-margin-top: 3px;
+        margin-top: 3px;
         }
     }
     
     .headLogo{
-        
+            margin-top: 6px;
             width: 70px;
     }
     .heading{
@@ -209,8 +209,8 @@ margin-top: 3px;
  }
 
  
-        .postImg{
-            position: relative;
+.postImg{
+     position: relative;
         .video{
             position: absolute;
             left: 50%;
@@ -225,3 +225,10 @@ margin-top: 3px;
           }
         }
       }
+
+
+ion-header ion-icon {
+  margin-top: 6px;
+}
+
+     
