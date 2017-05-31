@@ -54,6 +54,7 @@
         },
         "is_top_level": false,
         "variables": {}
+
     },
     "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
         "source": {
@@ -68,6 +69,10 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-admobpro"
+<<<<<<< HEAD
+
+=======
+>>>>>>> f3b135bfe46acfce50992ca51749f03f169bab6d
         },
         "is_top_level": true,
         "variables": {}
