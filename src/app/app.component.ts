@@ -32,9 +32,9 @@ export class MyApp {
         isTesting: false
       };
  
-      // AdMob.createBanner(options).then(() => {
-      //   AdMob.showBanner(8);
-      // });
+      AdMob.createBanner(options).then(() => {
+        AdMob.showBanner(8);
+      });
   })
 
 
