@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostListPage } from '../post-list-page/post-list-page';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
-import { LoadingController } from 'ionic-angular';
+import { LoadingController,Platform, ToastController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -24,24 +24,45 @@ import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
 export class PostpageFirst {
   @ViewChild(Slides) slides: Slides;
   public tips = [];  
+  id;
+  valNum = 0;
    mySlideOptions = {
    pager:true
   };
   iconValue=true;
   deviceId;
-  constructor(public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, 
+  constructor(public platform: Platform, public navCtrl: NavController, public tipsService: TipsService, public loading: LoadingController, 
   private sharingVar: SocialSharing,
-    private youtube: YoutubeVideoPlayer
+    private youtube: YoutubeVideoPlayer, public toastCtrl: ToastController
     ) {
     this.loadTips();
     this.deviceId = tipsService.getDeviceDetails();
    
-    //this.postParam = navParams.get("postValue");
-    // console.log(this.postParam);
+    platform.ready().then(()=>{
+       platform.registerBackButtonAction(()=>this.myHandlerFunction());
+   })
   }
+
+  myHandlerFunction(){    
+    if(this.valNum == 0){
+      let toast = this.toastCtrl.create({
+        message: 'Double Click back button to exit My Tips!',
+        duration: 2000
+      });
+      toast.present();
+      this.valNum = 1;
+      var temp = this;
+      this.id = setInterval(function() {
+      temp.valNum = 0;
+      clearInterval(temp.id);
+    }, 1000);
+    }else{
+    this.platform.exitApp();
+    }
+    };
    otherShare(tip){
      
-    this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.supercell.clashofclans&hl=en")
+    this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.gleed.mytips&hl=en")
     .then(()=>{
        
       },
@@ -72,8 +93,17 @@ export class PostpageFirst {
      this.tipsService.load()
     .then(data => {
       this.tips = data;  
+      this.tips.reverse();
       loader.dismiss();
       console.log("this is loading");
+      let toast = this.toastCtrl.create({
+        message: 'SWIPE RIGHT for more tips',
+        duration: 6000,
+        position: 'middle',
+        showCloseButton: true,
+        closeButtonText: 'Ok'
+      });
+      toast.present();
       var id = setInterval(function() {
          
         clearInterval(id);

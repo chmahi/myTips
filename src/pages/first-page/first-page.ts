@@ -20,18 +20,17 @@ import { LoadPage } from '../load-page/load-page';
 
 
 export class FirstPage {
-   id;  
+   id:any;  
+   ranOnce = false;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
      var temp = this;
-      var id = setInterval(function() {
+      this.id = setInterval(function() {
       temp.navCtrl.push( LoadPage );
       temp.navCtrl.push( PostpageFirst );
-      clearInterval(id);
+      clearInterval(temp.id);
     }, 2000);
     
 }
-
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FirstPage');
@@ -39,7 +38,7 @@ export class FirstPage {
   
 
 postpageFirst(){
- // clearInterval(this.id);
+  clearInterval(this.id);
   this.navCtrl.push( LoadPage );
   this.navCtrl.push( PostpageFirst );
 }
