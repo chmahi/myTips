@@ -52,7 +52,6 @@ export class BeautyPage {
         this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
    loadTips(){
-
     let loader = this.loading.create({
     content: 'Getting latest entries...',
     });

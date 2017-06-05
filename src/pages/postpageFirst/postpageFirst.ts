@@ -47,7 +47,8 @@ export class PostpageFirst {
     if(this.valNum == 0){
       let toast = this.toastCtrl.create({
         message: 'Double Click back button to exit My Tips!',
-        duration: 2000
+        duration: 2000,
+        cssClass:'Toast'
       });
       toast.present();
       this.valNum = 1;
@@ -61,7 +62,8 @@ export class PostpageFirst {
     }
     };
    otherShare(tip){
-     
+   
+   
     this.sharingVar.share("My Tips",tip.title,tip.images[0],"https://play.google.com/store/apps/details?id=com.gleed.mytips&hl=en")
     .then(()=>{
        
@@ -98,10 +100,12 @@ export class PostpageFirst {
       console.log("this is loading");
       let toast = this.toastCtrl.create({
         message: 'SWIPE RIGHT for more tips',
-        duration: 6000,
+        duration: 4000,
         position: 'middle',
         showCloseButton: true,
-        closeButtonText: 'Ok'
+        closeButtonText: 'Ok',
+        dismissOnPageChange: true,
+        cssClass:'Toast'
       });
       toast.present();
       var id = setInterval(function() {

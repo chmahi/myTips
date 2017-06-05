@@ -11,6 +11,7 @@ import {Device} from '@ionic-native/device';
 @Injectable()
 export class TipsService {
   data;
+  public genderServ;
   constructor(public http: Http,  private device: Device) {
     console.log('Hello TipsService Provider');
   }
@@ -30,12 +31,24 @@ export class TipsService {
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
         // and save the data for later reference
-        this.data = data;
+        this.data = data;       
         resolve(this.data);
       });
   });
   }
 }
+
+  filterGender(gender){ 
+      return this.data.filter((tip) => {
+        if(tip.genderSpecific.length == 1){
+          if(tip.genderSpecific[0].toLowerCase().indexOf(gender.toLowerCase()) > -1){
+            return tip;
+          }
+        }else{
+          return tip;
+        }
+      });  
+  }
 
 likeTip(tipId, userId) {
  
@@ -92,4 +105,9 @@ favTip(tipId, userId) {
           }
       });  
   }
+  getGender(gval){
+     console.log(gval);
+     this.genderServ = gval;
+     //this.filterGender(gval);
+   }
 }

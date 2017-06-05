@@ -235,4 +235,18 @@ ion-header ion-icon {
   margin-top: 6px;
 }
 
-     
+.Toast{
+    width: calc(100% - 30px);
+    margin: 15px;
+
+}
+
+    .toast-md .toast-wrapper{
+        border-radius: 50px;
+    }
+
+    .toast-md .toast-message{
+        line-height: 16px;
+        padding: 0px 20px;
+
+    }
