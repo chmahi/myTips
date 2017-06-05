@@ -37,6 +37,7 @@
 </ion-tabs>
 <ion-card (click)="callPost(tip)" *ngFor="let tip of tips  | filter:[{category:'Beauty'}]">
   <div class="postImg">
+    {{tip.genderSpecific}}
      <span class="video" [ngClass]="tip.videos.length == 0 ? 'hide' : 'show'"> <img src="assets/images/play-btn.png"></span>
     <img src="{{changeImage(tip.images)}}">
   </div>

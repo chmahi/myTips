@@ -6,16 +6,16 @@
   </ion-header>
 
   <ion-content>
-    <form (submit)="doSubmit($event)" [formGroup]="gform">
-      <ion-list radio-group  formControlName="gender">
+    <form (submit)="doSubmit($event)" [formGroup]="gform"  >
+      <ion-list radio-group  formControlName="gender" [(ngModel)]="gender" (ionChange)="saveSettings();">
   
         <ion-item>
           <ion-label>Male</ion-label>
-          <ion-radio checked="true" value="male"></ion-radio>
+          <ion-radio  checked="true" value="male"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>Female</ion-label>
-          <ion-radio value="female"></ion-radio>
+          <ion-radio  value="female"></ion-radio>
         </ion-item>
         <ion-item>
           <ion-label>Any</ion-label>
