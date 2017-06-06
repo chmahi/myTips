@@ -58,7 +58,9 @@ export class FitnessPage {
       postValue:value
     });
   };
-
+onPageWillEnter() {
+    this.loadTips();
+   }
   loadTips(){
 
     let loader = this.loading.create({
@@ -67,7 +69,8 @@ export class FitnessPage {
   loader.present().then(() => {
      this.tipsService.load()
     .then(data => {
-      this.tips = data;
+      // this.tips = data;
+      this.tips = this.tipsService.filterGender(data);
       this.tips.reverse();
       loader.dismiss();
     });

@@ -11,13 +11,15 @@ import {Device} from '@ionic-native/device';
 @Injectable()
 export class TipsService {
   data;
-  public genderServ;
+  reload = false;
+  public genderServ = 'male';
   constructor(public http: Http,  private device: Device) {
     console.log('Hello TipsService Provider');
   }
   load() {
-  if (this.data) {
+  if (this.data && this.reload == false) {
     // already loaded data
+    this.reload = true;
     return Promise.resolve(this.data);
   }else{
 
@@ -31,18 +33,22 @@ export class TipsService {
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
         // and save the data for later reference
-        this.data = data;       
+        // this.data = data;   
+        this.data = data;    
         resolve(this.data);
       });
   });
   }
 }
 
-  filterGender(gender){ 
-      return this.data.filter((tip) => {
+  filterGender(dataVal){ 
+      var serve = this.genderServ;
+      console.log(this.genderServ);
+      return dataVal.filter((tip) => {
         if(tip.genderSpecific.length == 1){
-          if(tip.genderSpecific[0].toLowerCase().indexOf(gender.toLowerCase()) > -1){
-            return tip;
+          if(tip.genderSpecific[0].toLowerCase().indexOf(serve.toLowerCase()) > -1){
+            console.log('tester');
+            return tip;            
           }
         }else{
           return tip;
@@ -90,7 +96,7 @@ favTip(tipId, userId) {
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
         // and save the data for later reference
-        this.data = data;
+        this.data = data;        
         resolve(this.data);
       });
   });
@@ -106,8 +112,10 @@ favTip(tipId, userId) {
       });  
   }
   getGender(gval){
-     console.log(gval);
-     this.genderServ = gval;
+     //if(this.genderServ == 'female'){
+        this.genderServ = gval;
+        this.reload = false;
+     //}
      //this.filterGender(gval);
    }
 }

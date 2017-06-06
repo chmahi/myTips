@@ -69,6 +69,9 @@ export class YogaPage {
   //         return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
   //     });  
   // }
+  onPageWillEnter() {
+    this.loadTips();
+   }
    loadTips(){
 
     let loader = this.loading.create({
@@ -77,7 +80,8 @@ export class YogaPage {
   loader.present().then(() => {
      this.tipsService.load()
     .then(data => {
-      this.tips = data;
+      // this.tips = data;
+      this.tips = this.tipsService.filterGender(data);
       this.tips.reverse();
       loader.dismiss();
     });

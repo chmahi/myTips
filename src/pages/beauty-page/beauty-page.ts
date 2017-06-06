@@ -30,7 +30,7 @@ export class BeautyPage {
 
   myHandlerFunction(){    
      this.navCtrl.push( PostpageFirst );
-    };
+  };
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad BeautyPage');
@@ -51,6 +51,12 @@ export class BeautyPage {
   public setFilteredItems() { 
         this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
+  public loadFilteredItems() { 
+        this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
+  }
+  onPageWillEnter() {
+    this.loadTips();
+   }
    loadTips(){
     let loader = this.loading.create({
     content: 'Getting latest entries...',
@@ -58,7 +64,8 @@ export class BeautyPage {
   loader.present().then(() => {
      this.tipsService.load()
     .then(data => {
-      this.tips = data;
+      // this.tips = data;
+      this.tips = this.tipsService.filterGender(data);
       this.tips.reverse();
       loader.dismiss();
     });
