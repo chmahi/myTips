@@ -52,6 +52,6 @@ export class MyApp {
     });
   }
   saveSettings(){
-   this.tipsService.getGender(this.gender);
+  // this.tipsService.getGender(this.gender);
   }
 }

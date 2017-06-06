@@ -84,18 +84,22 @@ export class PostpageFirst {
   }
 
 
-
+ onPageWillEnter() {
+    this.loadTips();
+   }
   loadTips(){
 
     let loader = this.loading.create({
     content: 'Getting latest entries...',
   });
-  
+ 
   loader.present().then(() => {
      this.tipsService.load()
     .then(data => {
-      this.tips = data;  
+      // this.tips = data;  
+      this.tips = this.tipsService.filterGender(data);
       this.tips.reverse();
+      
       loader.dismiss();
       console.log("this is loading");
       let toast = this.toastCtrl.create({
