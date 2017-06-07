@@ -202,4 +202,19 @@ export class PostpageFirst {
     }
   }
 
+  
+ gender(data,gen){
+  if(data.length == 0 || data.length == 2){
+    return true;
+  }
+  else if(data.length == 1){
+    if(data[0] == gen){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+}
+
 }

@@ -119,3 +119,4 @@ favTip(tipId, userId) {
      //this.filterGender(gval);
    }
 }
+ 
