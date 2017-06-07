@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
  import { Device } from '@ionic-native/device';
+ import {Push} from "@ionic-native/push";
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
@@ -71,6 +72,7 @@ import { Filter } from '../pipes/filter';
     Device,
     YoutubeVideoPlayer,
     AdMob,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
