@@ -36,6 +36,7 @@ export class MyApp {
       // AdMob.createBanner(options).then(() => {
       //   AdMob.showBanner(8);
       // });
+      this.initPushNotification();
   })
 
 
@@ -50,7 +51,7 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-      this.initPushNotification();
+      
     });
   }
   saveSettings(){
@@ -59,10 +60,12 @@ export class MyApp {
   initPushNotification() {
     if (!this.platform.is('cordova')) {
       console.warn("Push notifications not initialized. Cordova is not available - Run in physical device");
+      
       return;
     }
+   
     const options: PushOptions = {
-      android: {
+      android: { 
         senderID: "543595891066"
       },
       ios: {
@@ -73,8 +76,9 @@ export class MyApp {
       windows: {}
     };
     const pushObject: PushObject = this.push.init(options);
-
+     alert("test");
     pushObject.on('registration').subscribe((data: any) => {
+      
       alert("device token -> " + data.registrationId);
       //TODO - send device token to server
     });
