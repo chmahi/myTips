@@ -11,6 +11,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
+import { CategoryList} from '../pages/category-list/category-list';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
 
 import { Male } from '../pages/male/male';
@@ -33,9 +34,10 @@ import { Filter } from '../pipes/filter';
     MyApp,
     HomePage,
     FirstPage,
-    PostListPage,
+    CategoryList,
     Male,
     Female,
+    PostListPage,
      All,
     Postpage,
     ParallaxHeader,
@@ -54,8 +56,9 @@ import { Filter } from '../pipes/filter';
   entryComponents: [
     MyApp,
     HomePage,
-    FirstPage,
     PostListPage,
+    FirstPage,
+    CategoryList,
     Male,
     Female,
      All,

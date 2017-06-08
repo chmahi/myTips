@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { PostListPage } from '../post-list-page/post-list-page';
+import { CategoryList } from '../category-list/category-list';
 import { TipsService } from '../../providers/tips-service';
 import { Http } from '@angular/http';
 import { LoadingController,Platform, ToastController } from 'ionic-angular';
@@ -79,8 +79,8 @@ export class PostpageFirst {
 
    
   PostListPage(){
-    this.navCtrl.pop();
-    this.navCtrl.push( PostListPage );
+    
+    this.navCtrl.push( CategoryList );
   }
 
 
