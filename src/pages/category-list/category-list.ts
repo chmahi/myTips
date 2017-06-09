@@ -16,6 +16,7 @@ import { LoadingController,Platform } from 'ionic-angular';
 })
 export class CategoryList {
 categories;
+currentCategory;
   constructor(public navCtrl: NavController, public navParams: NavParams, public tipsService: TipsService, public loading: LoadingController) {
     this.loadCategory();
   }
@@ -45,4 +46,11 @@ categories;
   });
   
 }
+
+setCategory(categ){
+  this.tipsService.currentCategory = categ;
+   this.navCtrl.push( PostListPage );
+  console.log(this.tipsService.currentCategory);
+}
+
 }

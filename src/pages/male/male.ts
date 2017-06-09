@@ -5,6 +5,7 @@ import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
 import { Filter } from '../../pipes/filter';
+import { CategoryList } from '../category-list/category-list';
 /**
  * Generated class for the YogaPage page.
  *
@@ -19,11 +20,13 @@ import { Filter } from '../../pipes/filter';
 export class Male {
   tips;   
   searchTerm = "";
-  category = "Yoga";
+  category = "";
 
   public search = false;
   constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
+   console.log(this.tipsService.currentCategory);
+   this.category =  this.tipsService.currentCategory;
   platform.ready().then(()=>{
        platform.registerBackButtonAction(()=>this.myHandlerFunction());
    })
@@ -96,7 +99,7 @@ export class Male {
           if(tip.genderSpecific[0].toLowerCase() == serve.toLowerCase()){
             return tip;            
           }
-        }else if(tip.genderSpecific.length == 2){
+        }else if(tip.genderSpecific.length == 2 || tip.genderSpecific.length == 0 ){
           
           return tip;
         }
@@ -119,5 +122,7 @@ export class Male {
     }
   }
 
-
+backToCategory(){
+  this.navCtrl.push( CategoryList );
+}
 }

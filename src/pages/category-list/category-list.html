@@ -10,7 +10,7 @@
    <ion-grid>
     <ion-row >
    <ion-col col-3>
-     <ion-icon (click)="PostListPage()" name="ios-list-outline"></ion-icon>
+     <ion-icon (click)="PostListPage()" name="heart-outline"></ion-icon>
     </ion-col>
     <ion-col class="heading" col-6>
       <img class="headLogo" src="assets/images/logo-small.png">
@@ -22,12 +22,16 @@
 </ion-header>
 
 <ion-content>
-
-<ion-card col-5 *ngFor="let category of categories"  >
+<ion-grid>
+  <ion-row>
+    <ion-col col-6 *ngFor="let category of categories" (click)="setCategory(category.name)"  >
+<ion-card>
     <div  class="postImg">  
-      <img  src="assets/images/dummy.jpg">
+      <img  src="{{category.imageURL}}">
       <span> {{category.name}}</span>
     </div>
 </ion-card>
-
+    </ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

@@ -43,7 +43,4 @@
   <plugin name="cordova-plugin-whitelist" spec="1.3.1"/>
   <plugin name="cordova-plugin-x-socialsharing" spec="^5.1.8"/>
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1"/>
-  <plugin name="phonegap-plugin-push" spec="git+https://github.com/phonegap/phonegap-plugin-push.git">
-    <variable name="SENDER_ID" value="543595891066"/>
-  </plugin>
 </widget>

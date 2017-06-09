@@ -5,6 +5,7 @@ import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
 import { Filter } from '../../pipes/filter';
+import { CategoryList } from '../category-list/category-list';
 /**
  * Generated class for the YogaPage page.
  *
@@ -19,11 +20,13 @@ import { Filter } from '../../pipes/filter';
 export class All {
   tips;   
   searchTerm = "";
-  category = "Yoga";
+  category = "";
 
   public search = false;
   constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController, public tipsService: TipsService, public loading: LoadingController ) {
   this.loadTips();
+   this.category =  this.tipsService.currentCategory;
+   console.log(this.tipsService.currentCategory);
   platform.ready().then(()=>{
        platform.registerBackButtonAction(()=>this.myHandlerFunction());
    })
@@ -64,11 +67,11 @@ export class All {
  public setFilteredItems() { 
         this.tips = this.tipsService.filterItems(this.searchTerm, this.category); 
   }
-  // filterItems(searchTerm){ 
-  //     return this.tips.filter((tip) => {
-  //         return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
-  //     });  
-  // }
+  filterItems(searchTerm){ 
+      return this.tips.filter((tip) => {
+          return tip.title.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1;
+      });  
+  }
   onPageWillEnter() {
     this.loadTips();
    }
@@ -81,6 +84,7 @@ export class All {
      this.tipsService.load()
     .then(data => {
       this.tips = data;
+      console.log(this.tips.length)
       this.tips.reverse();
       loader.dismiss();
     });
@@ -117,6 +121,10 @@ gender(data,gen){
       return false;
     }
   }
+}
+
+backToCategory(){
+  this.navCtrl.push( CategoryList );
 }
 
 }

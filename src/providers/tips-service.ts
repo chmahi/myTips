@@ -12,6 +12,7 @@ import {Device} from '@ionic-native/device';
 export class TipsService {
   data;
   cate;
+ public currentCategory;
   reload = false;
   public genderServ = 'male';
   constructor(public http: Http,  private device: Device) {
@@ -29,7 +30,7 @@ export class TipsService {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    this.http.get('https://health-tips-backend.herokuapp.com/all/tips')
+    this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/all/tips')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
@@ -65,7 +66,7 @@ likeTip(tipId, userId) {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    this.http.post('https://health-tips-backend.herokuapp.com/tips/like/'+tipId+'/'+userId, '')
+    this.http.post('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/like/'+tipId+'/'+userId, '')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
@@ -92,7 +93,7 @@ favTip(tipId, userId) {
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
    
-    this.http.post('https://health-tips-backend.herokuapp.com/tips/favorite/'+tipId+'/'+userId,'')
+    this.http.post('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/favorite/'+tipId+'/'+userId,'')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
@@ -119,7 +120,9 @@ favTip(tipId, userId) {
      //}
      //this.filterGender(gval);
    }
-
+getcurrentCategory(currentcatg){
+  this.currentCategory = currentcatg;
+}
 
      loadCategory() {
        console.log('category');
@@ -133,7 +136,7 @@ favTip(tipId, userId) {
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    this.http.get('https://health-tips-backend.herokuapp.com/category/list/all')
+    this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/category/list/all')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data
