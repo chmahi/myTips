@@ -76,10 +76,10 @@ export class MyApp {
       windows: {}
     };
     const pushObject: PushObject = this.push.init(options);
-     alert("test");
+     
     pushObject.on('registration').subscribe((data: any) => {
-      
-      alert("device token -> " + data.registrationId);
+      this.tipsService.pushSetup(data.registrationId);
+      //alert("device token -> " + data.registrationId);
       //TODO - send device token to server
     });
 
