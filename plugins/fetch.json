@@ -54,7 +54,6 @@
         },
         "is_top_level": false,
         "variables": {}
-
     },
     "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
         "source": {
@@ -69,10 +68,6 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-admobpro"
-<<<<<<< HEAD
-
-=======
->>>>>>> f3b135bfe46acfce50992ca51749f03f169bab6d
         },
         "is_top_level": true,
         "variables": {}
@@ -84,5 +79,15 @@
         },
         "is_top_level": false,
         "variables": {}
+    },
+    "phonegap-plugin-push": {
+        "source": {
+            "type": "registry",
+            "id": "phonegap-plugin-push@1.10.4"
+        },
+        "is_top_level": true,
+        "variables": {
+            "SENDER_ID": "543595891066"
+        }
     }
 }
