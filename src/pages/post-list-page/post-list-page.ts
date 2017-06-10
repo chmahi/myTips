@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
-import { BeautyPage } from '../beauty-page/beauty-page';
-import {  YogaPage } from '../yoga-page/yoga-page';
-import { FitnessPage } from '../fitness-page/fitness-page';
+import { Male } from '../male/male';
+import {  Female } from '../female/female';
+import {  All } from '../all/all';
 /**
  * Generated class for the PostListPage page.
  *
@@ -32,9 +32,9 @@ export class TabIconTextContentPage {
 @Component({
   template: `
     <ion-tabs preloadTabs="false" animation="none">
-      <ion-tab tabTitle="Yoga"  [root]="tab1"></ion-tab>
-      <ion-tab tabTitle="Beauty"  [root]="tab2"></ion-tab>
-       <ion-tab tabTitle="Fitness"  [root]="tab3"></ion-tab>
+      <ion-tab tabTitle="All"  [root]="tab1"></ion-tab>
+      <ion-tab tabTitle="Male"  [root]="tab2"></ion-tab>
+       <ion-tab tabTitle="Female"  [root]="tab3"></ion-tab>
     </ion-tabs>`
   
 })
@@ -43,9 +43,10 @@ export class PostListPage {
   tab2: any;
   tab3: any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-     this.tab1 = YogaPage;
-     this.tab2 = BeautyPage;
-     this.tab3 = FitnessPage;
+      this.tab1 =  All;
+     this.tab2 = Male;
+     this.tab3 = Female;
+    
   }
   
   ionViewDidLoad() {

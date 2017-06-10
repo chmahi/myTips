@@ -30,11 +30,11 @@
     <div class="postContent">
       <div class="postHead">       
         <div class="postReview">  
-          {{tip.genderSpecific}}        
+               
           <h4>{{tip.title}} <span class="postDate">{{changeDate(tip.createdAt)}}</span></h4>
           <div class="reviews" >
-            <ion-grid>
-              <ion-row>
+            <ion-grid class="gridControl">
+              <ion-row class="rflex">
             <ion-col col-3 (click)="likePost(tip.id, tip.likes, iconLike(tip.likes).length)">
               <ion-icon  [ngClass]=" iconLike(tip.likes).length == 0 ? 'ion-ios-happy-outline' : 'ion-ios-happy'"  class="happyIcon icon"></ion-icon>
               <span>{{tip.likes.length}}</span> 
@@ -43,10 +43,16 @@
               <ion-icon [ngClass]=" iconFav(tip.favourites).length == 0 ? 'ion-md-heart-outline' : 'ion-md-heart'"  class="heartIcon icon"></ion-icon>
               <span>{{tip.favourites.length}}</span>
             </ion-col>
+           
            <!--<button ion-button (click)="otherShare()">Share Other</button>-->
-           <ion-col col-3 (click)="otherShare(tip)">
+           <ion-col col-3 (click)="otherShare()">
               <ion-icon  class="share" md="md-share"></ion-icon>
           </ion-col>
+      
+             <div  class="iconA">
+              <span *ngIf="gender(tip.genderSpecific,'female')" ><img src="assets/images/femaleIcon.png"></span>
+              <span *ngIf="gender(tip.genderSpecific,'male')"><img src="assets/images/maleIcon.png"></span>
+            </div>
           </ion-row>
          </ion-grid>
           </div>

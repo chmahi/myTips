@@ -11,11 +11,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
+import { CategoryList} from '../pages/category-list/category-list';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
 
-import { BeautyPage } from '../pages/beauty-page/beauty-page';
-import {  YogaPage } from '../pages/yoga-page/yoga-page';
-import { FitnessPage } from '../pages/fitness-page/fitness-page';
+import { Male } from '../pages/male/male';
+import {  Female } from '../pages/female/female';
+import { All } from '../pages/all/all';
 import { Postpage} from '../pages/postpage/postpage';
 import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
 import { TipsService } from '../providers/tips-service';
@@ -33,10 +34,11 @@ import { Filter } from '../pipes/filter';
     MyApp,
     HomePage,
     FirstPage,
+    CategoryList,
+    Male,
+    Female,
     PostListPage,
-    BeautyPage,
-    YogaPage,
-    FitnessPage,
+     All,
     Postpage,
     ParallaxHeader,
     PostpageFirst,
@@ -54,11 +56,12 @@ import { Filter } from '../pipes/filter';
   entryComponents: [
     MyApp,
     HomePage,
-    FirstPage,
     PostListPage,
-    BeautyPage,
-    YogaPage,
-    FitnessPage,
+    FirstPage,
+    CategoryList,
+    Male,
+    Female,
+     All,
     Postpage,
     PostpageFirst,
     LoadPage,
