@@ -1,0 +1,16 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "phonegap-plugin-push": {
+            "SENDER_ID": "543595891066",
+            "PACKAGE_NAME": "com.gleed.mytips"
+        }
+    },
+    "dependent_plugins": {}
+}
