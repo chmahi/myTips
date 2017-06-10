@@ -1,3 +1,16 @@
 ionic plugin add cordova-plugin-x-socialsharing
 ionic plugin add cordova-plugin-device
 ionic plugin add cordova-plugin-admobpro
+
+Add google-services.json in android/cordova and android folder
+
+uninstall 
+ionic plugin remove cordova-plugin-fcm
+
+ionic plugin remove phonegap-plugin-push --variable SENDER_ID=543595891066 --save
+
+then
+
+ionic plugin add phonegap-plugin-push --variable SENDER_ID=543595891066 --save
+
+
