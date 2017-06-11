@@ -25,10 +25,10 @@
 <ion-grid>
   <ion-row>
     <ion-col col-6 *ngFor="let category of categories" (click)="setCategory(category.name)"  >
-<ion-card>
+<ion-card class="categoryList">
     <div  class="postImg">  
       <img  src="{{category.imageURL}}">
-      <span> {{category.name}}</span>
+      <span class="category"> {{category.name}}</span>
     </div>
 </ion-card>
     </ion-col>
