@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { TipsService } from '../../providers/tips-service';
+import { LoadingController,Platform } from 'ionic-angular';
 /**
  * Generated class for the Favourite page.
  *
@@ -13,12 +14,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'favourite.html',
 })
 export class Favourite {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  favourites;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public tipsService: TipsService, public loading: LoadingController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad Favourite');
   }
+
+     loadFavourites(){
+
+    let loader = this.loading.create({
+    content: 'Getting latest entries...',
+    });
+  loader.present().then(() => {
+     this.tipsService.loadFavourites()
+    .then(data => {
+      this.favourites = data;
+      this.favourites.reverse();
+      loader.dismiss();
+    });
+   // loader.dismiss();
+  });
+  
+}
 
 }

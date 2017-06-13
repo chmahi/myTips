@@ -6,25 +6,26 @@
 -->
 <ion-header class="header">
    <ion-grid>
-    <ion-row >
+    <ion-row>
    <ion-col col-3>
      <ion-icon navPop name="ios-arrow-back"></ion-icon>
     </ion-col>
-    <ion-col class="heading favourite" col-6>
-      <span>Favourite</span>
+    <ion-col class="heading" col-6>
+      <img class="headLogo favLogo" src="assets/images/fav.png">
     </ion-col>
     <ion-col col-3>
+     
     </ion-col>
     </ion-row>
    </ion-grid>
 </ion-header>
 
-
 <ion-content>
-  <ion-card>
+  {{favourites}}
+  <ion-card  *ngFor="let favourite of favourites">
 
   <ion-card-header>
-    Card Header
+    {{favourite.title}}
   </ion-card-header>
 
   <ion-card-content>
