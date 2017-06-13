@@ -1,0 +1,37 @@
+<!--
+  Generated template for the Favourite page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header">
+   <ion-grid>
+    <ion-row>
+   <ion-col col-3>
+     <ion-icon navPop name="ios-arrow-back"></ion-icon>
+    </ion-col>
+    <ion-col class="heading" col-6>
+      <img class="headLogo favLogo" src="assets/images/fav.png">
+    </ion-col>
+    <ion-col col-3>
+     
+    </ion-col>
+    </ion-row>
+   </ion-grid>
+</ion-header>
+
+<ion-content>
+  {{favourites}}
+  <ion-card  *ngFor="let favourite of favourites">
+
+  <ion-card-header>
+    {{favourite.title}}
+  </ion-card-header>
+
+  <ion-card-content>
+    <!-- Add card content here! -->
+  </ion-card-content>
+
+</ion-card>
+
+</ion-content>

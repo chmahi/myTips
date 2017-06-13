@@ -13,6 +13,7 @@ import { HomePage } from '../pages/home/home';
 import { FirstPage} from '../pages/first-page/first-page';
 import { CategoryList} from '../pages/category-list/category-list';
 import { PostListPage} from '../pages/post-list-page/post-list-page';
+import { Favourite } from '../pages/favourite/favourite';
 
 import { Male } from '../pages/male/male';
 import {  Female } from '../pages/female/female';
@@ -23,6 +24,7 @@ import { TipsService } from '../providers/tips-service';
 import { LoadPage } from '../pages/load-page/load-page';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { ParallaxHeader } from '../components/parallax-header/parallax-header';
+
 
 import { Filter } from '../pipes/filter';
  import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player';
@@ -43,6 +45,7 @@ import { Filter } from '../pipes/filter';
     ParallaxHeader,
     PostpageFirst,
     LoadPage,
+    Favourite,
     // pipes
     Filter
     // SliderPage
@@ -65,6 +68,7 @@ import { Filter } from '../pipes/filter';
     Postpage,
     PostpageFirst,
     LoadPage,
+    Favourite
     // SliderPage
   ],
   providers: [

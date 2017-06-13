@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostListPage } from '../post-list-page/post-list-page';
+import { Favourite } from '../favourite/favourite';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
 /**
@@ -27,7 +28,7 @@ currentCategory;
 
     PostListPage(){
    
-    this.navCtrl.push( PostListPage );
+    this.navCtrl.push( Favourite );
   }
 
      loadCategory(){
