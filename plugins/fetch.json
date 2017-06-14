@@ -67,7 +67,7 @@
     "cordova-plugin-admobpro": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-admobpro"
+            "id": "cordova-plugin-admobpro@^2.28.3"
         },
         "is_top_level": true,
         "variables": {}

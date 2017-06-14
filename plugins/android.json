@@ -10,7 +10,17 @@
         "phonegap-plugin-push": {
             "SENDER_ID": "543595891066",
             "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.gleed.mytips"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        }
+    }
 }
