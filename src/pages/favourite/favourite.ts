@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
+import { Postpage } from '../postpage/postpage';
 /**
  * Generated class for the Favourite page.
  *
@@ -16,6 +17,7 @@ import { LoadingController,Platform } from 'ionic-angular';
 export class Favourite {
   favourites;
   constructor(public navCtrl: NavController, public navParams: NavParams,public tipsService: TipsService, public loading: LoadingController) {
+    this.loadFavourites();
   }
 
   ionViewDidLoad() {
@@ -38,5 +40,9 @@ export class Favourite {
   });
   
 }
-
+   callPost(value){
+    this.navCtrl.push( Postpage,{
+      postValue:value
+    });
+  }
 }
