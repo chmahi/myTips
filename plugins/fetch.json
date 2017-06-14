@@ -1,16 +1,16 @@
 {
-    "ionic-plugin-keyboard": {
-        "source": {
-            "type": "registry",
-            "id": "ionic-plugin-keyboard@~2.2.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-whitelist": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@1.3.1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console"
         },
         "is_top_level": true,
         "variables": {}
@@ -23,14 +23,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-device": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-device@1.1.4"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-splashscreen": {
         "source": {
             "type": "registry",
@@ -39,27 +31,18 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-x-socialsharing": {
+    "cordova-plugin-device": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-x-socialsharing@^5.1.8"
+            "id": "cordova-plugin-device@1.1.4"
         },
         "is_top_level": true,
         "variables": {}
     },
-    "es6-promise-plugin": {
+    "ionic-plugin-keyboard": {
         "source": {
             "type": "registry",
-            "id": "es6-promise-plugin"
-        },
-        "is_top_level": false,
-        "variables": {}
-    },
-    "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/JonSmart/CordovaYoutubeVideoPlayer",
-            "subdir": "."
+            "id": "ionic-plugin-keyboard@~2.2.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -80,10 +63,26 @@
         "is_top_level": false,
         "variables": {}
     },
+    "cordova-plugin-x-socialsharing": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-x-socialsharing@^5.1.8"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "es6-promise-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "es6-promise-plugin"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
     "phonegap-plugin-push": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-push@1.10.4"
+            "id": "phonegap-plugin-push@~1.10.4"
         },
         "is_top_level": true,
         "variables": {

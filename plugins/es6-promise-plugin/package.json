@@ -1,5 +1,4 @@
 {
-
   "name": "es6-promise-plugin",
   "version": "4.1.0",
   "description": "ES6-Promises polyfill for Cordova/PhoneGap",
@@ -12,12 +11,10 @@
   "scripts": {
     "build": "./build"
   },
-
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vstirbu/PromisesPlugin.git"
   },
-
   "author": "",
   "license": "MIT",
   "bugs": {
@@ -25,5 +22,4 @@
   },
   "homepage": "https://github.com/vstirbu/PromisesPlugin#readme",
   "ecosystem": "cordova"
-
 }

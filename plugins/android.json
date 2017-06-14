@@ -7,19 +7,40 @@
         "files": {}
     },
     "installed_plugins": {
-        "phonegap-plugin-push": {
-            "SENDER_ID": "543595891066",
+        "cordova-plugin-console": {
             "PACKAGE_NAME": "com.gleed.mytips"
         },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.gleed.mytips"
         },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
         "cordova-plugin-admobpro": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "phonegap-plugin-push": {
+            "SENDER_ID": "543595891066",
             "PACKAGE_NAME": "com.gleed.mytips"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-extension": {
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "es6-promise-plugin": {
             "PACKAGE_NAME": "com.gleed.mytips"
         }
     }
