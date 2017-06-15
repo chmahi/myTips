@@ -44,4 +44,8 @@ export class Favourite {
       postValue:value
     });
   }
+
+    renderContent(textVal){
+    return textVal.slice(0,30)+"...";
+  }
 }
