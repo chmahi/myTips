@@ -12,6 +12,7 @@ import {Device} from '@ionic-native/device';
 export class TipsService {
   data;
   cate;
+  fav;
  public currentCategory;
   reload = false;
   public genderServ = 'male';
@@ -103,7 +104,7 @@ pushSetup(deviceTokenVal) {
 }
 
 getDeviceDetails(){    
-//  alert(this.device.uuid);
+ alert(this.device.uuid);
   return this.device.uuid; 
 }
 
@@ -168,6 +169,32 @@ getcurrentCategory(currentcatg){
         // this.data = data;   
         this.cate = data;    
         resolve(this.cate);
+      });
+  });
+  }
+}
+
+   loadFavourites() {
+     var userVal = this.getDeviceDetails();
+       console.log('category');
+  if (this.fav) {
+    // already loaded data
+    return Promise.resolve(this.fav);
+  }else{
+
+  // don't have the data yet
+  return new Promise(resolve => {
+    // We're using Angular HTTP provider to request the data,
+    // then on the response, it'll map the JSON data to a parsed JS object.
+    // Next, we process the data and resolve the promise with the new data.
+    this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/f0f71057fae85acb/favourites')
+      .map(res => res.json())
+      .subscribe(data => {
+        // we've got back the raw data, now generate the core schedule data
+        // and save the data for later reference
+        // this.data = data;   
+        this.fav = data;    
+        resolve(this.fav);
       });
   });
   }

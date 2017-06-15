@@ -19,10 +19,10 @@ npm-debug.log*
 coverage/
 dist/
 node_modules/
+plugins/
 tmp/
 temp/
 hooks/
-platforms/
 www/
 $RECYCLE.BIN/
 .DS_Store
