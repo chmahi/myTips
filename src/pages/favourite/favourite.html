@@ -26,17 +26,19 @@
   <ion-card-content class="favCard">
     <ion-grid>
     <ion-row>
-      <ion-col col-3>
+      <ion-col col-3 class="fav">
         <div class="favImage">
            <img src="{{(favourite.images[0])}}">
         </div>
       </ion-col>
-    <ion-col col-9>
-    {{favourite.title}}
+    <ion-col col-9  class="para">
+      <h3 [innerHTML]="renderContent(favourite.title)" ></h3>
+      <div class="categoryName">
+        <h5>Category</h5>
+      </div>
     </ion-col>
     </ion-row>
     </ion-grid>
-
   </ion-card-content>
 
 </ion-card>
