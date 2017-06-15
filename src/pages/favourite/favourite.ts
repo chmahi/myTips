@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
+import { Postpage } from '../postpage/postpage';
 /**
  * Generated class for the Favourite page.
  *
@@ -38,5 +39,9 @@ export class Favourite {
   });
   
 }
-
+   callPost(value){
+    this.navCtrl.push( Postpage,{
+      postValue:value
+    });
+  }
 }

@@ -33,9 +33,9 @@ export class MyApp {
         adId: 'ca-app-pub-7071565575097936/4327122006',
         isTesting: false
       };
-      // AdMob.createBanner(options).then(() => {
-      //   AdMob.showBanner(8);
-      // });
+      AdMob.createBanner(options).then(() => {
+        AdMob.showBanner(8);
+      });
       this.initPushNotification();
   })
 

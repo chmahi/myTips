@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "543595891066",
+    "firebase_url": "https://mytips-f1425.firebaseio.com",
+    "project_id": "mytips-f1425",
+    "storage_bucket": "mytips-f1425.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:543595891066:android:d084bed3d2045dd0",
+        "android_client_info": {
+          "package_name": "com.gleed.mytips"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "543595891066-4rm8d1knc6c7urjss1agn07korvdejtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEudOT3wblSQXRxKT7E2VJmjfJflPr0h4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

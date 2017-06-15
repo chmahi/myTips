@@ -22,12 +22,21 @@
 
 <ion-content>
 
-  <ion-card  *ngFor="let favourite of favourites">
-  <ion-card-header>
+  <ion-card (click)="callPost(favourite)" *ngFor="let favourite of favourites">
+  <ion-card-content class="favCard">
+    <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+        <div class="favImage">
+           <img src="{{(favourite.images[0])}}">
+        </div>
+      </ion-col>
+    <ion-col col-9>
     {{favourite.title}}
-  </ion-card-header>
-  <ion-card-content>
-    <!-- Add card content here! -->
+    </ion-col>
+    </ion-row>
+    </ion-grid>
+
   </ion-card-content>
 
 </ion-card>

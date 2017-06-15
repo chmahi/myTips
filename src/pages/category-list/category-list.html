@@ -24,7 +24,7 @@
 <ion-content>
 <ion-grid>
   <ion-row>
-    <ion-col col-6 *ngFor="let category of categories" (click)="setCategory(category.name)"  >
+    <ion-col col-4 *ngFor="let category of categories" (click)="setCategory(category.name)"  >
 <ion-card class="categoryList">
     <div  class="postImg">  
       <img  src="{{category.imageURL}}">
