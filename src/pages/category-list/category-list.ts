@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { PostListPage } from '../post-list-page/post-list-page';
+import { PostpageFirst } from '../postpageFirst/postpageFirst';
 import { Favourite } from '../favourite/favourite';
 import { TipsService } from '../../providers/tips-service';
 import { LoadingController,Platform } from 'ionic-angular';
@@ -18,10 +19,15 @@ import { LoadingController,Platform } from 'ionic-angular';
 export class CategoryList {
 categories;
 currentCategory;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public tipsService: TipsService, public loading: LoadingController) {
+  constructor(public platform: Platform,public navCtrl: NavController, public navParams: NavParams, public tipsService: TipsService, public loading: LoadingController) {
     this.loadCategory();
+     platform.ready().then(()=>{
+       platform.registerBackButtonAction(()=>this.myHandlerFunction());
+   })
   }
-
+ myHandlerFunction(){    
+     this.navCtrl.push( PostpageFirst );
+    };
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryList');
   }
