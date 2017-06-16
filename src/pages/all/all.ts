@@ -32,7 +32,7 @@ export class All {
    })
   }
    myHandlerFunction(){    
-     this.navCtrl.push( PostpageFirst );
+     this.navCtrl.push( CategoryList );
     };
   openMenu(){
     this.menuCtrl.open();

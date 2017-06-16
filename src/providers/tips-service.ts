@@ -104,7 +104,7 @@ pushSetup(deviceTokenVal) {
 }
 
 getDeviceDetails(){    
- alert(this.device.uuid);
+
   return this.device.uuid; 
 }
 
@@ -187,7 +187,8 @@ getcurrentCategory(currentcatg){
     // We're using Angular HTTP provider to request the data,
     // then on the response, it'll map the JSON data to a parsed JS object.
     // Next, we process the data and resolve the promise with the new data.
-    this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/f0f71057fae85acb/favourites')
+    // this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/f0f71057fae85acb/favourites')
+    this.http.get('http://ec2-13-126-41-169.ap-south-1.compute.amazonaws.com/tips/'+userVal+'/favourites')
       .map(res => res.json())
       .subscribe(data => {
         // we've got back the raw data, now generate the core schedule data

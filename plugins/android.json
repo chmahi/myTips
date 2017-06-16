@@ -13,9 +13,6 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.gleed.mytips"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.gleed.mytips"
-        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "com.gleed.mytips"
         },
@@ -33,6 +30,9 @@
         },
         "phonegap-plugin-push": {
             "SENDER_ID": "543595891066",
+            "PACKAGE_NAME": "com.gleed.mytips"
+        },
+        "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "com.gleed.mytips"
         }
     },

@@ -31,7 +31,7 @@ export class Female {
    })
   }
    myHandlerFunction(){    
-     this.navCtrl.push( PostpageFirst );
+     this.navCtrl.push( CategoryList );
     };
   openMenu(){
     this.menuCtrl.open();

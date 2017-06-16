@@ -26,14 +26,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-splashscreen.SplashScreen",
-        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
-        "pluginId": "cordova-plugin-splashscreen",
-        "clobbers": [
-            "navigator.splashscreen"
-        ]
-    },
-    {
         "id": "es6-promise-plugin.Promise",
         "file": "plugins/es6-promise-plugin/www/promise.js",
         "pluginId": "es6-promise-plugin",
@@ -70,6 +62,14 @@ module.exports = [
         "clobbers": [
             "PushNotification"
         ]
+    },
+    {
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -79,13 +79,14 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-device": "1.1.4",
-    "cordova-plugin-splashscreen": "4.0.3",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
     "com.bunkerpalace.cordova.YoutubeVideoPlayer": "1.0.0",
     "cordova-plugin-extension": "1.5.1",
     "cordova-plugin-admobpro": "2.28.3",
-    "phonegap-plugin-push": "1.10.4"
+    "phonegap-plugin-push": "1.10.4",
+    "cordova-plugin-console": "1.0.7",
+    "cordova-plugin-splashscreen": "4.0.4-dev"
 };
 // BOTTOM OF METADATA
 });

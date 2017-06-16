@@ -19,6 +19,8 @@ import { Male } from '../pages/male/male';
 import {  Female } from '../pages/female/female';
 import { All } from '../pages/all/all';
 import { Postpage} from '../pages/postpage/postpage';
+import { Postpagenotify } from '../pages/postpagenotify/postpagenotify';
+
 import { PostpageFirst } from '../pages/postpageFirst/postpageFirst';
 import { TipsService } from '../providers/tips-service';
 import { LoadPage } from '../pages/load-page/load-page';
@@ -40,6 +42,7 @@ import { Filter } from '../pipes/filter';
     Male,
     Female,
     PostListPage,
+    Postpagenotify,
      All,
     Postpage,
     ParallaxHeader,
@@ -62,6 +65,7 @@ import { Filter } from '../pipes/filter';
     PostListPage,
     FirstPage,
     CategoryList,
+    Postpagenotify,
     Male,
     Female,
      All,

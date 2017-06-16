@@ -34,7 +34,7 @@
     <ion-col col-9  class="para">
       <h3 [innerHTML]="renderContent(favourite.title)" ></h3>
       <div class="categoryName">
-        <h5>Category</h5>
+        <h5>{{getCategory(favourite.category)}}</h5>
       </div>
     </ion-col>
     </ion-row>

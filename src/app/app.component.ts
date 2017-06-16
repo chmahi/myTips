@@ -8,7 +8,7 @@ import { FirstPage  } from '../pages/first-page/first-page';
 import { AdMob } from '@ionic-native/admob';
 import { TipsService } from '../providers/tips-service';
 import {Push, PushObject, PushOptions} from "@ionic-native/push";
-
+import { Postpagenotify } from '../pages/postpagenotify/postpagenotify';
 
 @Component({
   templateUrl: 'app.html'
@@ -50,6 +50,8 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
+      this.statusBar.overlaysWebView(true);
+      this.statusBar.backgroundColorByHexString('#84b722');
       this.splashScreen.hide();
       
     });
@@ -84,12 +86,12 @@ export class MyApp {
     });
 
     pushObject.on('notification').subscribe((data: any) => {
-      console.log('message', data.message);
+     // alert('message is:'+ JSON.stringify(data));
       //if user using app and push notification comes
       if (data.additionalData.foreground) {
         // if application open, show popup
         let confirmAlert = this.alertCtrl.create({
-          title: 'New Notification',
+          title: data.title,
           message: data.message,
           buttons: [{
             text: 'Ignore',
@@ -98,7 +100,12 @@ export class MyApp {
             text: 'View',
             handler: () => {
               //TODO: Your logic here
-              //this.nav.push(DetailsPage, {message: data.message});
+              // var newObj = data.additionalData;
+              // newObj.push(
+              //   {title: data.title}
+              // );
+              
+            this.nav.push(Postpagenotify, {postValue:data.additionalData, title:data.title});
             }
           }]
         });
@@ -107,7 +114,13 @@ export class MyApp {
         //if user NOT using app and push notification comes
         //TODO: Your logic on click of push notification directly
        // this.nav.push(DetailsPage, {message: data.message});
-        console.log("Push notification clicked");
+      //  var newObj = data.additionalData;
+      //         newObj.push(
+      //           {title: data.title}
+      //         );
+              
+           // this.nav.push(Postpage, {postValue:newObj});
+       this.nav.push(Postpagenotify, {postValue:data.additionalData, title:data.title});
       }
     });
 

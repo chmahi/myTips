@@ -23,14 +23,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-splashscreen": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-splashscreen@~4.0.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-device": {
         "source": {
             "type": "registry",
@@ -88,5 +80,13 @@
         "variables": {
             "SENDER_ID": "543595891066"
         }
+    },
+    "cordova-plugin-splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "https://github.com/apache/cordova-plugin-splashscreen.git"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }
